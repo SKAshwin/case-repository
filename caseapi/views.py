@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .serializers import CaseMetaSerializer
+from .models import CaseMeta
 
-# Create your views here.
+
+class CaseMetaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = CaseMeta.objects.all()
+    serializer_class = CaseMetaSerializer
