@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+    db:
+        image: postgres
+        environment:
+            - POSTGRES_DB=caserepo
+            - POSTGRES_USER=caseapi_test
+            - POSTGRES_PASSWORD=16323446-54a8-49ed-8441-5aa8ee768aaa
+        restart: always 
+    web:
+        build: .
+        command: sh test_setup.sh
+        environment:
+            - DB_USER=caseapi_test
+            - DB_NAME=caserepo
+            - DB_PASSWORD=16323446-54a8-49ed-8441-5aa8ee768aaa
+            - DB_HOST=db
+            - DB_PORT=5432
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
