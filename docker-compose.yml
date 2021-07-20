@@ -11,5 +11,6 @@ services:
             - DB_HOST=${DB_HOST}
             - DB_PORT=${DB_PORT}
             - PRODUCTION_SERVER=${PRODUCTION_SERVER}
+            - DJANGO_SECRETKEY=${SECRET_KEY}
         ports:
             - "80:80"
