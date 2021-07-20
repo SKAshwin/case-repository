@@ -15,7 +15,7 @@ import environ
 
 
 # Load in environmental variables from the .env file, which must be in same directory as settings.py
-env = environ.Env()
+env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
