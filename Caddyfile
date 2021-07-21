@@ -1,0 +1,10 @@
+localhost
+
+@notStatic {
+    not {
+        path /static/*
+    }
+}
+
+file_server /static/* browse
+reverse_proxy @notStatic 0.0.0.0:8000
