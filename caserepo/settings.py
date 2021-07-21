@@ -31,7 +31,7 @@ SECRET_KEY = env('DJANGO_SECRETKEY')
 
 DEBUG = env('DEBUG') # will be false if 'DEBUG' if not set
 
-ALLOWED_HOSTS = [env('PRODUCTION_SERVER'), 'localhost']
+ALLOWED_HOSTS = [env('SITE_ADDRESS'), 'localhost']
 
 
 # Application definition

@@ -10,7 +10,9 @@ services:
         restart: always 
     web:
         build: .
-        command: sh test_setup.sh
+        command: sh setup.test.sh
+        volumes:
+            - static_volume:/app/static
         environment:
             - DB_USER=caseapi_test
             - DB_NAME=caserepo
@@ -18,9 +20,24 @@ services:
             - DB_HOST=db
             - DB_PORT=5432
             - DJANGO_SECRETKEY=django-insecure-l76t9@d&1hdvf)8-6@xe_z80ho&*!5f5j8)t3e6ckq8ra^^zf@
-            - PRODUCTION_SERVER=localhost
+            - SITE_ADDRESS=localhost
             - DEBUG=TRUE
         ports:
             - "8000:8000"
         depends_on:
             - db
+    caddy:
+        build: ./caddy
+        command: caddy run
+        volumes:
+            - static_volume:/app/static
+        environment:
+            - SITE_ADDRESS=localhost
+        ports:
+            - 80:80
+            - 443:443
+        depends_on:
+            - web
+    
+volumes:
+    static_volume:
