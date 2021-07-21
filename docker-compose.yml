@@ -22,6 +22,8 @@ services:
         command: caddy run
         volumes:
             - static_volume:/app/static
+            - /data/caddy:/data
+            - /config/caddy:/config
         environment:
             - SITE_ADDRESS=${PRODUCTION_SERVER}
         ports:
