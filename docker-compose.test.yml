@@ -22,8 +22,8 @@ services:
             - DJANGO_SECRETKEY=django-insecure-l76t9@d&1hdvf)8-6@xe_z80ho&*!5f5j8)t3e6ckq8ra^^zf@
             - SITE_ADDRESS=localhost
             - DEBUG=TRUE
-        ports:
-            - "8000:8000"
+        expose:
+            - 8000
         depends_on:
             - db
     caddy:

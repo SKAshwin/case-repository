@@ -3,14 +3,32 @@ version: "3.7"
 services:
     web:
         build: .
-        command: gunicorn caserepo.wsgi:application --bind 0.0.0.0:80
+        command: sh setup.prod.sh
+        volumes:
+            - static_volume:/app/static
         environment:
             - DB_USER=${DB_USER}
             - DB_NAME=${DB_NAME}
             - DB_PASSWORD=${DB_PASSWORD}
             - DB_HOST=${DB_HOST}
             - DB_PORT=${DB_PORT}
-            - PRODUCTION_SERVER=${PRODUCTION_SERVER}
+            - SITE_ADDRESS=${PRODUCTION_SERVER}
             - DJANGO_SECRETKEY=${DJANGO_SECRETKEY}
+        expose:
+            - 8000
+   
+    caddy:
+        build: ./caddy
+        command: caddy run
+        volumes:
+            - static_volume:/app/static
+        environment:
+            - SITE_ADDRESS=${PRODUCTION_SERVER}
         ports:
-            - "80:80"
+            - 80:80
+            - 443:443
+        depends_on:
+            - web
+    
+volumes:
+    static_volume:
