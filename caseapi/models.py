@@ -37,7 +37,7 @@ class FieldTags(models.Model):
 class CaseMeta(models.Model):
     
     title = models.CharField(max_length=255, null=True)
-    document_title = models.CharField(max_length=255, null=True)
+    doc_title = models.CharField(max_length=255, null=True)
     case_name = models.CharField(max_length=255, null=True)
     doc_id = models.CharField(max_length=25)
     doc_type = models.CharField(max_length=50, null=True)
