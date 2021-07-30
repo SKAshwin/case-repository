@@ -9,7 +9,7 @@ class CaseMetaFilter(filters.FilterSet):
     # allows filtering any queryset by the following fields
     class Meta:
         model = CaseMeta
-        fields = ['case_id', 'case_name', 'title', 'document_title', 'doc_id', 'doc_type', 'docket_number', 'outcome']
+        fields = ['case_id', 'case_name', 'title', 'doc_title', 'doc_id', 'doc_type', 'docket_number', 'outcome']
         # we intentionally list every field we want filtering to be available one, because otherwise we risk exposing a field
         # that should be kept secret
         filter_overrides = {
