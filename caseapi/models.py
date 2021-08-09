@@ -1,6 +1,8 @@
 from django.db import models
 import datetime as dt
 
+from django.db.models.expressions import Case
+
 class CitedDocs(models.Model):
     doc_id = models.CharField(max_length=50)  
     doc_title = models.CharField(max_length=100, null=True)  
@@ -42,10 +44,16 @@ class CaseMeta(models.Model):
     doc_id = models.CharField(max_length=25)
     doc_type = models.CharField(max_length=50, null=True)
     judges = models.ManyToManyField(Judges)
-    case_id = models.CharField(max_length=25, null=True)
+    case_id = models.CharField(max_length=25, primary_key = True, null=True)
     outcome =  models.CharField(max_length=255, null=True)
     docket_number = models.CharField(max_length = 255, null=True)
     self_cite = models.CharField(max_length=75, null=True)
+    date = models.DateField(null=True)
 
     class Meta:
         db_table = "case_meta"
+
+class USCaseMeta(CaseMeta):
+    circuit_num = models.IntegerField(null=True)
+    class Meta:
+        db_table = "us_case_meta"
