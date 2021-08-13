@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import CaseMeta
+from .models import CaseMeta, USCaseMeta
 
-class CaseMetaSerializer(serializers.HyperlinkedModelSerializer):
+class CaseMetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = CaseMeta
-        fields = ['case_id', 'case_name', 'title', 'doc_title', 'doc_id', 'doc_type','docket_number','outcome']
+        fields = '__all__'
+
+class USCaseMetaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = USCaseMeta
+        fields = '__all__'

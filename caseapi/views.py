@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import CaseMetaSerializer
-from .models import CaseMeta
+from .serializers import CaseMetaSerializer, USCaseMetaSerializer
+from .models import CaseMeta, USCaseMeta
 from django.db import models
 from django_filters import rest_framework as filters
 
@@ -9,9 +9,7 @@ class CaseMetaFilter(filters.FilterSet):
     # allows filtering any queryset by the following fields
     class Meta:
         model = CaseMeta
-        fields = ['case_id', 'case_name', 'title', 'doc_title', 'doc_id', 'doc_type', 'docket_number', 'outcome']
-        # we intentionally list every field we want filtering to be available one, because otherwise we risk exposing a field
-        # that should be kept secret
+        fields = '__all__'
         filter_overrides = {
             models.CharField: {
                 'filter_class': filters.CharFilter,
@@ -20,13 +18,16 @@ class CaseMetaFilter(filters.FilterSet):
                     # true for all char fields
                 }
             }
+
         }
-
 # The actual view sets
-
 class CaseMetaViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CaseMeta.objects.all()
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
 
+class USCaseMetaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = USCaseMeta.objects.all()
+    serializer_class = USCaseMetaSerializer
+    filterset_class = CaseMetaFilter
 

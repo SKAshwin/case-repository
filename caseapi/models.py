@@ -1,5 +1,6 @@
 from django.db import models
 import datetime as dt
+import random
 
 from django.db.models.expressions import Case
 
@@ -44,7 +45,7 @@ class CaseMeta(models.Model):
     doc_id = models.CharField(max_length=25)
     doc_type = models.CharField(max_length=50, null=True)
     judges = models.ManyToManyField(Judges)
-    case_id = models.CharField(max_length=25, primary_key = True, null=True)
+    case_id = models.CharField(max_length=25, primary_key = True, default = '00000')
     outcome =  models.CharField(max_length=255, null=True)
     docket_number = models.CharField(max_length = 255, null=True)
     self_cite = models.CharField(max_length=75, null=True)

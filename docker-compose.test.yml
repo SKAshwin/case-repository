@@ -3,6 +3,7 @@ version: "3.7"
 services:
     db:
         image: postgres
+        container_name: db
         environment:
             - POSTGRES_DB=caserepo
             - POSTGRES_USER=caseapi_test
@@ -11,6 +12,7 @@ services:
     web:
         build: .
         command: sh setup.test.sh
+        container_name: django
         volumes:
             - static_volume:/app/static
         environment:
