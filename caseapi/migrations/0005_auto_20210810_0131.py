@@ -11,17 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='USCaseMeta',
-            fields=[
-                ('casemeta_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='caseapi.casemeta')),
-                ('circuit_num', models.IntegerField(null=True)),
-            ],
-            options={
-                'db_table': 'us_case_meta',
-            },
-            bases=('caseapi.casemeta',),
-        ),
         migrations.RemoveField(
             model_name='casemeta',
             name='id',
@@ -35,6 +24,17 @@ class Migration(migrations.Migration):
             model_name='casemeta',
             name='case_id',
             field=models.CharField(default='00000', max_length=25, primary_key=True, serialize=False),
+        ),
+        migrations.CreateModel(
+            name='USCaseMeta',
+            fields=[
+                ('casemeta_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='caseapi.casemeta')),
+                ('circuit_num', models.IntegerField(null=True)),
+            ],
+            options={
+                'db_table': 'us_case_meta',
+            },
+            bases=('caseapi.casemeta',),
         ),
         migrations.RunSQL('alter table case_meta_judges alter column casemeta_id TYPE varchar(25);')
     ]
