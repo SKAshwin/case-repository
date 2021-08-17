@@ -39,7 +39,8 @@ class CreateListModelMixin(object):
 
 # The actual view sets
 class CaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = [IsAdminUser|ReadOnly] # non-admins can only read, can't update or post new objects
+    # note that, in settings.py, only authenticated users can acces the API at all)
     queryset = CaseMeta.objects.all()
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
