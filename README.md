@@ -5,10 +5,10 @@ Install docker and docker-compose.
 After cloning the repository, navigate to the same folder as the repository (ie `cd case-repository`) and simply run
 
 ```
-docker-compose -f docker-compose.test.yml up --build
+docker-compose -f docker-compose.test.yml up --build -d
 ```
 
-`-f docker-compose.test.yml` tells docker compose to use the development settings, as opposed to the production settings stored in `docker-compose.yml` (which would be used if you simpyl ran `docker-compose up --build`). 
+`-f docker-compose.test.yml` tells docker compose to use the development settings, as opposed to the production settings stored in `docker-compose.yml` (which would be used if you simpyl ran `docker-compose up --build`). The option `-d` tells docker to run the command without occupying your terminal (so you can run further commands).
 
 There is no need to set any environmental variables (test environmental variables values are supplied in `docker-compose.test.yml` - note the production version instead *does* expect to read from a .env file) or to install any software - python, django, or postgres. 
 
