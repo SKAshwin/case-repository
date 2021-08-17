@@ -1,8 +1,8 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
-from .serializers import CaseMetaSerializer, USCaseMetaSerializer
-from .models import CaseMeta, USCaseMeta
+from .serializers import CaseMetaSerializer, USCircuitCaseMetaSerializer
+from .models import CaseMeta, USCircuitCaseMeta
 from django.db import models
 from django_filters import rest_framework as filters
 
@@ -45,9 +45,9 @@ class CaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
 
-class USCaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
+class USCircuitCaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     permission_classes = [IsAdminUser|ReadOnly]
-    queryset = USCaseMeta.objects.all()
-    serializer_class = USCaseMetaSerializer
+    queryset = USCircuitCaseMeta.objects.all()
+    serializer_class = USCircuitCaseMetaSerializer
     filterset_class = CaseMetaFilter
 

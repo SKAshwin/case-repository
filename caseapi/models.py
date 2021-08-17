@@ -55,7 +55,7 @@ class CaseMeta(models.Model):
     class Meta:
         db_table = "case_meta"
 
-class USCaseMeta(CaseMeta):
+class USCircuitCaseMeta(CaseMeta):
     circuit_num = models.IntegerField(null=True)
     class Meta:
-        db_table = "us_case_meta"
+        db_table = "us_circuit_case_meta"
