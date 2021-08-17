@@ -128,7 +128,8 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$260000$XJbLwjZXKf9FrLj2VEloMQ$YXSbgZS+oRBQyl7illzkSeAQdIZ/ovBlP0nrvk9cRQY=	\N	t	admin			admin@myproject.com	t	t	2021-08-11 20:14:00.487494+00
+1	pbkdf2_sha256$260000$XJbLwjZXKf9FrLj2VEloMQ$YXSbgZS+oRBQyl7illzkSeAQdIZ/ovBlP0nrvk9cRQY=	2021-08-17 11:05:23.36909+00	t	admin			admin@myproject.com	t	t	2021-08-11 20:14:00.487494+00
+2	pbkdf2_sha256$260000$ME7JGoiV0lL5fplGftmCml$XfcdMi31MspGaAip2d1Gin5Hwa82/U1mYr9FLtxdzEo=	\N	f	user	User	Tester	user@mysite.com	f	t	2021-08-17 11:06:19+00
 \.
 
 
@@ -189,6 +190,7 @@ Allen v. Selig, 53-1 USTC Para. 9137, 200 F.2d 487 (5th Cir. 1952), Court Opinio
 Kas v. Gilkerson, 199 F.2d 398, 91 U.S. App. D.C. 153 (D.C. Cir. 1952), Court Opinion	Kas v. Gilkerson, 199 F.2d 398, 91 U.S. App. D.C. 153 (D.C. Cir. 1952), Court Opinion	Kas v. Gilkerson	X3OF5A	OPINIONS	X3OF5A	Judgment Reversed, Judgment Entered		\N	\N
 Goodman v. Commissioner, 52-2 USTC Para. 9556, 199 F.2d 895 (3d Cir. 1952), Court Opinion	Goodman v. Commissioner, 52-2 USTC Para. 9556, 199 F.2d 895 (3d Cir. 1952), Court Opinion	Goodman v. Commissioner	X3OFBI	OPINIONS	X3OFBI	Judgment Reversed	10790	\N	\N
 Fisher v. Home Indemnity Co., 198 F.2d 218 (5th Cir. 1952), Court Opinion	Fisher v. Home Indemnity Co., 198 F.2d 218 (5th Cir. 1952), Court Opinion	Fisher v. Home Indemnity Co.	X44DBF	OPINIONS	X44DBF	Injunction Affirmed	13810	\N	\N
+Bernstein v. FTC, 200 F.2d 404 (9th Cir. 1952), Court Opinion	Bernstein v. FTC, 200 F.2d 404 (9th Cir. 1952), Court Opinion	Bernstein v. FTC	X416CT	OPINIONS	X416CT	Order Affirmed	13104	\N	\N
 The Girdler Corp. v. Charles Eneu Johnson & Co., 194 F.2d 533, 92 U.S.P.Q. 341 (3d Cir. 1952), Court Opinion	The Girdler Corp. v. Charles Eneu Johnson & Co., 194 F.2d 533, 92 U.S.P.Q. 341 (3d Cir. 1952), Court Opinion	The Girdler Corp. v. Charles Eneu Johnson & Co.	X44CPR	OPINIONS	X44CPR	Judgment Affirmed (Per Curiam)		\N	\N
 Johnson v. New York, New Haven & Hartford R.R., 194 F.2d 194 (2d Cir. 1952), Court Opinion	Johnson v. New York, New Haven & Hartford R.R., 194 F.2d 194 (2d Cir. 1952), Court Opinion	Johnson v. New York, New Haven & Hartford R.R.	X44CI1	OPINIONS	X44CI1	Judgment Reversed	74	\N	\N
 Davison v. United States, 196 F.2d 223 (8th Cir. 1952), Court Opinion	Davison v. United States, 196 F.2d 223 (8th Cir. 1952), Court Opinion	Davison v. United States	X4142A	OPINIONS	X4142A	Appeal Dismissed (Per Curiam)	14545	\N	\N
@@ -298,6 +300,7 @@ Freitag v. Strand of Atl. City, Inc., 198 F.2d 752 (3d Cir. 1952), Court Opinion
 In re Ray, 198 F.2d 831, 95 U.S.P.Q. 85 (C.C.P.A. 1952), Court Opinion	In re Ray, 198 F.2d 831, 95 U.S.P.Q. 85 (C.C.P.A. 1952), Court Opinion	In re Ray	XIFRHN	OPINIONS	XIFRHN	Order Affirmed	5897	\N	\N
 United States v. Grigalauskas, 195 F.2d 494 (1st Cir. 1952), Court Opinion	United States v. Grigalauskas, 195 F.2d 494 (1st Cir. 1952), Court Opinion	United States v. Grigalauskas	X48HU9	OPINIONS	X48HU9	Judgment Affirmed	4613	\N	\N
 Martinez v. Rivera, 196 F.2d 192 (10th Cir. 1952), Court Opinion	Martinez v. Rivera, 196 F.2d 192 (10th Cir. 1952), Court Opinion	Martinez v. Rivera	X41402	OPINIONS	X41402	Judgment Affirmed	4357	\N	\N
+United States v. Popham, 198 F.2d 660 (8th Cir. 1952), Court Opinion	United States v. Popham, 198 F.2d 660 (8th Cir. 1952), Court Opinion	United States v. Popham	X44DND	OPINIONS	X44DND	Judgment Reversed, Case Remanded	14505	\N	\N
 United States v. Unexcelled Chemical Corp., 196 F.2d 264, 10 WH Cases 642 (3d Cir. 1952), Court Opinion	United States v. Unexcelled Chemical Corp., 196 F.2d 264, 10 WH Cases 642 (3d Cir. 1952), Court Opinion	United States v. Unexcelled Chemical Corp.	X4143B	OPINIONS	X4143B	Judgment Reversed, Case Remanded	10612	\N	\N
 Copper S.S. Co. v. Michigan, 194 F.2d 465 (6th Cir. 1952), Court Opinion	Copper S.S. Co. v. Michigan, 194 F.2d 465 (6th Cir. 1952), Court Opinion	Copper S.S. Co. v. Michigan	X44CN0	OPINIONS	X44CN0	Judgment Affirmed	11344	\N	\N
 McWhorter v. United States, 193 F.2d 982 (5th Cir. 1952), Court Opinion	McWhorter v. United States, 193 F.2d 982 (5th Cir. 1952), Court Opinion	McWhorter v. United States	X44CEB	OPINIONS	X44CEB	Conviction Reversed	13693	\N	\N
@@ -326,7 +329,6 @@ Gibson Wine Co. v. Snyder, 194 F.2d 329, 90 U.S. App. D.C. 135 (D.C. Cir. 1952),
 NLRB v. American Thread Co., 198 F.2d 137, 30 LRRM 2493 (5th Cir. 1952), Court Opinion	NLRB v. American Thread Co., 198 F.2d 137, 30 LRRM 2493 (5th Cir. 1952), Court Opinion	NLRB v. American Thread Co.	X44D91	OPINIONS	X44D91	Order Set Aside, Petition Denied	13883	\N	\N
 NLRB v. Williams, 195 F.2d 669, 29 LRRM 2633 (4th Cir. 1952), Court Opinion	NLRB v. Williams, 195 F.2d 669, 29 LRRM 2633 (4th Cir. 1952), Court Opinion	NLRB v. Williams	X48I3K	OPINIONS	X48I3K	Order Entered	6370	\N	\N
 Heil Beauty Supplies, Inc. v. Commissioner, 199 F.2d 193 (8th Cir. 1952), Court Opinion	Heil Beauty Supplies, Inc. v. Commissioner, 199 F.2d 193 (8th Cir. 1952), Court Opinion	Heil Beauty Supplies, Inc. v. Commissioner	X3OF1N	OPINIONS	X3OF1N	Order Affirmed	14360	\N	\N
-United States v. Popham, 198 F.2d 660 (8th Cir. 1952), Court Opinion	United States v. Popham, 198 F.2d 660 (8th Cir. 1952), Court Opinion	United States v. Popham	X44DND	OPINIONS	X44DND	Judgment Reversed, Case Remanded	14505	\N	\N
 Cramp Shipbuilding Co. v. United States, 195 F.2d 848 (3d Cir. 1952), Court Opinion	Cramp Shipbuilding Co. v. United States, 195 F.2d 848 (3d Cir. 1952), Court Opinion	Cramp Shipbuilding Co. v. United States	X48IBM	OPINIONS	X48IBM	Order Affirmed, Order Vacated, Motion To Dismiss Dismissed, Appeal Dismissed	10498	\N	\N
 Associated Folding Box Co. v. Levkoff, 194 F.2d 252, 92 U.S.P.Q. 193 (1st Cir. 1952), Court Opinion	Associated Folding Box Co. v. Levkoff, 194 F.2d 252, 92 U.S.P.Q. 193 (1st Cir. 1952), Court Opinion	Associated Folding Box Co. v. Levkoff	X44CIH	OPINIONS	X44CIH	Judgment Set Aside, Case Remanded	4601	\N	\N
 Kenworthy v. Commissioner, 52-2 USTC Para. 9383, 197 F.2d 525 (3d Cir. 1952), Court Opinion	Kenworthy v. Commissioner, 52-2 USTC Para. 9383, 197 F.2d 525 (3d Cir. 1952), Court Opinion	Kenworthy v. Commissioner	X3OEKU	OPINIONS	X3OEKU	Order Affirmed (Per Curiam)	10719-10724	\N	\N
@@ -354,6 +356,7 @@ NLRB v. Swan Fastener Corp., 199 F.2d 935, 31 LRRM 2082 (1st Cir. 1952), Court O
 Faulkner v. Gibbs, 199 F.2d 635, 95 U.S.P.Q. 400 (9th Cir. 1952), Court Opinion	Faulkner v. Gibbs, 199 F.2d 635, 95 U.S.P.Q. 400 (9th Cir. 1952), Court Opinion	Faulkner v. Gibbs	X3OF8R	OPINIONS	X3OF8R	Judgment Affirmed (In Part), Judgment Reversed (In Part)	13120	\N	\N
 Winnick v. Commissioner, 52-2 USTC Para. 9519, 199 F.2d 374 (6th Cir. 1952), Court Opinion	Winnick v. Commissioner, 52-2 USTC Para. 9519, 199 F.2d 374 (6th Cir. 1952), Court Opinion	Winnick v. Commissioner	X3OF4A	OPINIONS	X3OF4A	Judgment Set Aside, Case Remanded (Per Curiam)		\N	\N
 United States ex rel. Kelly v. Martin, 200 F.2d 336 (2d Cir. 1952), Court Opinion	United States ex rel. Kelly v. Martin, 200 F.2d 336 (2d Cir. 1952), Court Opinion	United States ex rel. Kelly v. Martin	X416B7	OPINIONS	X416B7	Judgment Affirmed (Per Curiam)		\N	\N
+Solomon v. Boschulte, 200 F.2d 482 (3d Cir. 1952), Court Opinion	Solomon v. Boschulte, 200 F.2d 482 (3d Cir. 1952), Court Opinion	Solomon v. Boschulte	X416F7	OPINIONS	X416F7	Judgment Affirmed	10830	\N	\N
 Sinclair Refining Co. v. Southern Coast Corp., 195 F.2d 626 (5th Cir. 1952), Court Opinion	Sinclair Refining Co. v. Southern Coast Corp., 195 F.2d 626 (5th Cir. 1952), Court Opinion	Sinclair Refining Co. v. Southern Coast Corp.	X48I31	OPINIONS	X48I31	Judgment Affirmed	13706	\N	\N
 United States v. Missouri-Kansas-Texas R. Co., 194 F.2d 777 (5th Cir. 1952), Court Opinion	United States v. Missouri-Kansas-Texas R. Co., 194 F.2d 777 (5th Cir. 1952), Court Opinion	United States v. Missouri-Kansas-Texas R. Co.	X44D0O	OPINIONS	X44D0O	Judgment Affirmed	13719	\N	\N
 Brantley v. United States, 200 F.2d 556 (5th Cir. 1952), Court Opinion	Brantley v. United States, 200 F.2d 556 (5th Cir. 1952), Court Opinion	Brantley v. United States	X416G9	OPINIONS	X416G9	Judgment Affirmed	14171	\N	\N
@@ -380,6 +383,7 @@ Atlantic Coast Line R. Co. v. King, 196 F.2d 999 (5th Cir. 1952), Court Opinion	
 NLRB v. Norfolk Shipbuilding & Drydock Corp., 195 F.2d 632, 29 LRRM 2677 (4th Cir. 1952), Court Opinion	NLRB v. Norfolk Shipbuilding & Drydock Corp., 195 F.2d 632, 29 LRRM 2677 (4th Cir. 1952), Court Opinion	NLRB v. Norfolk Shipbuilding & Drydock Corp.	X48I37	OPINIONS	X48I37	Motion Denied		\N	\N
 NLRB v. Radio Officers' Union of Commercial Telegraphers Union, 196 F.2d 960, 30 LRRM 2103 (2d Cir. 1952), Court Opinion	NLRB v. Radio Officers' Union of Commercial Telegraphers Union, 196 F.2d 960, 30 LRRM 2103 (2d Cir. 1952), Court Opinion	NLRB v. Radio Officers' Union of Commercial Telegraphers Union	X414H6	OPINIONS	X414H6	Petition Granted	158	\N	\N
 Commissioner v. Gidwitz' Estate, 196 F.2d 813 (7th Cir. 1952), Court Opinion	Commissioner v. Gidwitz' Estate, 196 F.2d 813 (7th Cir. 1952), Court Opinion	Commissioner v. Gidwitz' Estate	X414DP	OPINIONS	X414DP	Judgment Affirmed	10370-1	\N	\N
+Razete v. United States, 199 F.2d 44 (6th Cir. 1952), Court Opinion	Razete v. United States, 199 F.2d 44 (6th Cir. 1952), Court Opinion	Razete v. United States	X3OF5T	OPINIONS	X3OF5T	Judgment Affirmed	11554	\N	\N
 Mahurin v. Sheriff of St. Francois County, Mo., 195 F.2d 529 (8th Cir. 1952), Court Opinion	Mahurin v. Sheriff of St. Francois County, Mo., 195 F.2d 529 (8th Cir. 1952), Court Opinion	Mahurin v. Sheriff of St. Francois County, Mo.	X48HVF	OPINIONS	X48HVF	Writ Of Mandamus Dismissed (Per Curiam)	14558	\N	\N
 In re Levin, 197 F.2d 345, 94 U.S.P.Q. 79 (C.C.P.A. 1952), Court Opinion	In re Levin, 197 F.2d 345, 94 U.S.P.Q. 79 (C.C.P.A. 1952), Court Opinion	In re Levin	XIEF1B	OPINIONS	XIEF1B	Order Affirmed	5874	\N	\N
 General Petroleum Corp. v. Moss, 200 F.2d 197 (10th Cir. 1952), Court Opinion	General Petroleum Corp. v. Moss, 200 F.2d 197 (10th Cir. 1952), Court Opinion	General Petroleum Corp. v. Moss	X41690	OPINIONS	X41690		4525	\N	\N
@@ -493,6 +497,7 @@ Crocker v. Crocker, 195 F.2d 236 (10th Cir. 1952), Court Opinion	Crocker v. Croc
 Smith v. The Mormacdale, 198 F.2d 849 (3d Cir. 1952), Court Opinion	Smith v. The Mormacdale, 198 F.2d 849 (3d Cir. 1952), Court Opinion	Smith v. The Mormacdale	X44DS9	OPINIONS	X44DS9	Order Affirmed	10700	\N	\N
 Candy Bros. Mfg. Co. v. Commissioner, 198 F.2d 330 (8th Cir. 1952), Court Opinion	Candy Bros. Mfg. Co. v. Commissioner, 198 F.2d 330 (8th Cir. 1952), Court Opinion	Candy Bros. Mfg. Co. v. Commissioner	X44DFH	OPINIONS	X44DFH	Order Affirmed	14525	\N	\N
 O'Rourke v. Pennsylvania R. Co., 194 F.2d 612 (2d Cir. 1952), Court Opinion	O'Rourke v. Pennsylvania R. Co., 194 F.2d 612 (2d Cir. 1952), Court Opinion	O'Rourke v. Pennsylvania R. Co.	X44CSC	OPINIONS	X44CSC	Judgment Reversed	149	\N	\N
+Jozwiak v. United States, 199 F.2d 369 (6th Cir. 1952), Court Opinion	Jozwiak v. United States, 199 F.2d 369 (6th Cir. 1952), Court Opinion	Jozwiak v. United States	X3OF4N	OPINIONS	X3OF4N	Case Remanded (Per Curiam)	11480	\N	\N
 Gregory v. R.R. Retirement Bd. of the U.S., 201 F.2d 52 (6th Cir. 1952), Court Opinion	Gregory v. R.R. Retirement Bd. of the U.S., 201 F.2d 52 (6th Cir. 1952), Court Opinion	Gregory v. R.R. Retirement Bd. of the U.S.	X43S59	OPINIONS	X43S59	Motion To Dismiss Granted, Appeal Dismissed (Per Curiam)	11503	\N	\N
 Polizzi v. Cowles Magazines, Inc., 197 F.2d 74 (5th Cir. 1952), Court Opinion	Polizzi v. Cowles Magazines, Inc., 197 F.2d 74 (5th Cir. 1952), Court Opinion	Polizzi v. Cowles Magazines, Inc.	X3OEPS	OPINIONS	X3OEPS	Judgment Affirmed	13858	\N	\N
 In re Long Island Lighting Co., 197 F.2d 709 (2d Cir. 1952), Court Opinion	In re Long Island Lighting Co., 197 F.2d 709 (2d Cir. 1952), Court Opinion	In re Long Island Lighting Co.	X3OEO9	OPINIONS	X3OEO9	Order Entered (Per Curiam)		\N	\N
@@ -549,6 +554,7 @@ Gillen v. Phoenix Indemnity Co., 198 F.2d 147 (5th Cir. 1952), Court Opinion	Gil
 Commissioner v. Golonsky, 52-2 USTC Para. 9553, 200 F.2d 72 (3d Cir. 1952), Court Opinion	Commissioner v. Golonsky, 52-2 USTC Para. 9553, 200 F.2d 72 (3d Cir. 1952), Court Opinion	Commissioner v. Golonsky	X416KF	OPINIONS	X416KF	Order Affirmed	10751	\N	\N
 Barnet v. Wied, 195 F.2d 311, 93 U.S.P.Q. 161 (C.C.P.A. 1952), Court Opinion	Barnet v. Wied, 195 F.2d 311, 93 U.S.P.Q. 161 (C.C.P.A. 1952), Court Opinion	Barnet v. Wied	XIGEHR	OPINIONS	XIGEHR	Order Affirmed	5833	\N	\N
 Powers Photo Engraving Co. v. Commissioner, 52-2 USTC Para. 9369, 197 F.2d 704 (2d Cir. 1952), Court Opinion	Powers Photo Engraving Co. v. Commissioner, 52-2 USTC Para. 9369, 197 F.2d 704 (2d Cir. 1952), Court Opinion	Powers Photo Engraving Co. v. Commissioner	X3OEO8	OPINIONS	X3OEO8	Case Remanded (Per Curiam)	228	\N	\N
+Godette v. United States, 199 F.2d 331 (4th Cir. 1952), Court Opinion	Godette v. United States, 199 F.2d 331 (4th Cir. 1952), Court Opinion	Godette v. United States	X3OF3K	OPINIONS	X3OF3K	Judgment Affirmed (Per Curiam)	6436	\N	\N
 Fujimoto v. U.S. Dist. Court of Dist. of Hawaii, 199 F.2d 27 (9th Cir. 1952), Court Opinion	Fujimoto v. U.S. Dist. Court of Dist. of Hawaii, 199 F.2d 27 (9th Cir. 1952), Court Opinion	Fujimoto v. U.S. Dist. Court of Dist. of Hawaii	X3OF2F	OPINIONS	X3OF2F	Petition Denied (Per Curiam)	13514	\N	\N
 United States v. Packer, 200 F.2d 540 (2d Cir. 1952), Court Opinion	United States v. Packer, 200 F.2d 540 (2d Cir. 1952), Court Opinion	United States v. Packer	X416G6	OPINIONS	X416G6	Judgment Reversed (Per Curiam)	116	\N	\N
 Schlottman v. Pressey, 195 F.2d 343 (10th Cir. 1952), Court Opinion	Schlottman v. Pressey, 195 F.2d 343 (10th Cir. 1952), Court Opinion	Schlottman v. Pressey	X48HNO	OPINIONS	X48HNO	Case Remanded, Judgment Reversed	4324	\N	\N
@@ -576,6 +582,7 @@ Consol. Gas Electric Light & Power Co. of Baltimore v. Pennsylvania Water & Powe
 United States v. Carengella, 198 F.2d 3 (7th Cir. 1952), Court Opinion	United States v. Carengella, 198 F.2d 3 (7th Cir. 1952), Court Opinion	United States v. Carengella	X44DI0	OPINIONS	X44DI0	Judgment Reversed, Judgment Affirmed		\N	\N
 Farmers Ins. Exch. v. Taylor, 193 F.2d 756 (10th Cir. 1952), Court Opinion	Farmers Ins. Exch. v. Taylor, 193 F.2d 756 (10th Cir. 1952), Court Opinion	Farmers Ins. Exch. v. Taylor	X44CA2	OPINIONS	X44CA2	Judgment Affirmed	4297	\N	\N
 In re Leichter, 197 F.2d 955 (3d Cir. 1952), Court Opinion	In re Leichter, 197 F.2d 955 (3d Cir. 1952), Court Opinion	In re Leichter	X3OET6	OPINIONS	X3OET6	Order Reversed	10659	\N	\N
+Jones v. Squier, 195 F.2d 179 (9th Cir. 1952), Court Opinion	Jones v. Squier, 195 F.2d 179 (9th Cir. 1952), Court Opinion	Jones v. Squier	X48HI4	OPINIONS	X48HI4	Order Affirmed	13200	\N	\N
 Frazier v. Sims Motor Transport Lines, Inc., 196 F.2d 914 (7th Cir. 1952), Court Opinion	Frazier v. Sims Motor Transport Lines, Inc., 196 F.2d 914 (7th Cir. 1952), Court Opinion	Frazier v. Sims Motor Transport Lines, Inc.	X414H9	OPINIONS	X414H9	Judgment Affirmed	10521	\N	\N
 Container Co. v. Carpenter Container Corp., 194 F.2d 1013, 93 U.S.P.Q. 60 (3d Cir. 1952), Court Opinion	Container Co. v. Carpenter Container Corp., 194 F.2d 1013, 93 U.S.P.Q. 60 (3d Cir. 1952), Court Opinion	Container Co. v. Carpenter Container Corp.	X44CEL	OPINIONS	X44CEL	Judgment Affirmed (Per Curiam)		\N	\N
 Hearn v. United States, 194 F.2d 647 (7th Cir. 1952), Court Opinion	Hearn v. United States, 194 F.2d 647 (7th Cir. 1952), Court Opinion	Hearn v. United States	X44CTT	OPINIONS	X44CTT	Order Affirmed	10495	\N	\N
@@ -604,8 +611,6 @@ NLRB v. Whitinsville Spinning Ring Co., 199 F.2d 585, 31 LRRM 2051 (1st Cir. 195
 Greer v. Stanolind Oil & Gas Co., 200 F.2d 920 (10th Cir. 1952), Court Opinion	Greer v. Stanolind Oil & Gas Co., 200 F.2d 920 (10th Cir. 1952), Court Opinion	Greer v. Stanolind Oil & Gas Co.	X416QR	OPINIONS	X416QR	Judgment Affirmed (In Part), Judgment Reversed (In Part)	4486	\N	\N
 Ward v. Booth, 197 F.2d 963 (9th Cir. 1952), Court Opinion	Ward v. Booth, 197 F.2d 963 (9th Cir. 1952), Court Opinion	Ward v. Booth	X3OES7	OPINIONS	X3OES7	Judgment Affirmed	12967	\N	\N
 Allen v. Barr, 196 F.2d 159, 93 U.S.P.Q. 113 (6th Cir. 1952), Court Opinion	Allen v. Barr, 196 F.2d 159, 93 U.S.P.Q. 113 (6th Cir. 1952), Court Opinion	Allen v. Barr	X4140G	OPINIONS	X4140G	Judgment Affirmed	11335	\N	\N
-Solomon v. Boschulte, 200 F.2d 482 (3d Cir. 1952), Court Opinion	Solomon v. Boschulte, 200 F.2d 482 (3d Cir. 1952), Court Opinion	Solomon v. Boschulte	X416F7	OPINIONS	X416F7	Judgment Affirmed	10830	\N	\N
-Razete v. United States, 199 F.2d 44 (6th Cir. 1952), Court Opinion	Razete v. United States, 199 F.2d 44 (6th Cir. 1952), Court Opinion	Razete v. United States	X3OF5T	OPINIONS	X3OF5T	Judgment Affirmed	11554	\N	\N
 Southern Ry. v. United States, 197 F.2d 922 (5th Cir. 1952), Court Opinion	Southern Ry. v. United States, 197 F.2d 922 (5th Cir. 1952), Court Opinion	Southern Ry. v. United States	X3OES3	OPINIONS	X3OES3	Judgment Affirmed	13788	\N	\N
 Comet Theatre Enters., Inc. v. Cartwright, 195 F.2d 80 (9th Cir. 1952), Court Opinion	Comet Theatre Enters., Inc. v. Cartwright, 195 F.2d 80 (9th Cir. 1952), Court Opinion	Comet Theatre Enters., Inc. v. Cartwright	X48IAD	OPINIONS	X48IAD	Judgment Affirmed	13017	\N	\N
 Toolson v. New York Yankees, Inc., 200 F.2d 198 (9th Cir. 1952), Court Opinion	Toolson v. New York Yankees, Inc., 200 F.2d 198 (9th Cir. 1952), Court Opinion	Toolson v. New York Yankees, Inc.	X41693	OPINIONS	X41693	Order Affirmed (Per Curiam)	13228	\N	\N
@@ -661,7 +666,6 @@ Son Shipping Co. v. De Fosse & Tanghe, 199 F.2d 687 (2d Cir. 1952), Court Opinio
 NLRB v. Caldwell Furniture Co., 199 F.2d 267, 31 LRRM 2015 (4th Cir. 1952), Court Opinion	NLRB v. Caldwell Furniture Co., 199 F.2d 267, 31 LRRM 2015 (4th Cir. 1952), Court Opinion	NLRB v. Caldwell Furniture Co.	X3OF2U	OPINIONS	X3OF2U	Order Entered (Per Curiam)		\N	\N
 Texas Eastern Transmission Corp. v. McDonald, 198 F.2d 929 (7th Cir. 1952), Court Opinion	Texas Eastern Transmission Corp. v. McDonald, 198 F.2d 929 (7th Cir. 1952), Court Opinion	Texas Eastern Transmission Corp. v. McDonald	X44DUF	OPINIONS	X44DUF	Appeal Dismissed	10597	\N	\N
 Democrat Printing Co. v. FCC, 202 F.2d 298, 91 U.S. App. D.C. 72 (D.C. Cir. 1952), Court Opinion	Democrat Printing Co. v. FCC, 202 F.2d 298, 91 U.S. App. D.C. 72 (D.C. Cir. 1952), Court Opinion	Democrat Printing Co. v. FCC	X44EL4	OPINIONS	X44EL4	Case Remanded		\N	\N
-Jozwiak v. United States, 199 F.2d 369 (6th Cir. 1952), Court Opinion	Jozwiak v. United States, 199 F.2d 369 (6th Cir. 1952), Court Opinion	Jozwiak v. United States	X3OF4N	OPINIONS	X3OF4N	Case Remanded (Per Curiam)	11480	\N	\N
 Smith v. Pollin, 196 F.2d 768, 90 U.S. App. D.C. 286 (D.C. Cir. 1952), Court Opinion	Smith v. Pollin, 196 F.2d 768, 90 U.S. App. D.C. 286 (D.C. Cir. 1952), Court Opinion	Smith v. Pollin	X414CK	OPINIONS	X414CK	Appeal Discharged (Per Curiam)		\N	\N
 Pennsylvania Thresherman & Farmers' Mutual Casualty Ins. Co. v. Crapet, 199 F.2d 850 (5th Cir. 1952), Court Opinion	Pennsylvania Thresherman & Farmers' Mutual Casualty Ins. Co. v. Crapet, 199 F.2d 850 (5th Cir. 1952), Court Opinion	Pennsylvania Thresherman & Farmers' Mutual Casualty Ins. Co. v. Crapet	X3OFBB	OPINIONS	X3OFBB	Judgment Affirmed	13929	\N	\N
 Elk Refining Co. v. Daniel, 199 F.2d 479 (4th Cir. 1952), Court Opinion	Elk Refining Co. v. Daniel, 199 F.2d 479 (4th Cir. 1952), Court Opinion	Elk Refining Co. v. Daniel	X3OF6L	OPINIONS	X3OF6L	Judgment Affirmed	6455	\N	\N
@@ -689,6 +693,7 @@ Big Chief Drilling Co. v. Commissioner, 196 F.2d 218 (10th Cir. 1952), Court Opi
 Sullivan v. Bond, 198 F.2d 529, 91 U.S. App. D.C. 99 (D.C. Cir. 1952), Court Opinion	Sullivan v. Bond, 198 F.2d 529, 91 U.S. App. D.C. 99 (D.C. Cir. 1952), Court Opinion	Sullivan v. Bond	X44DJG	OPINIONS	X44DJG	Order Affirmed (Per Curiam)		\N	\N
 Palo Blanco Fruit Co. v. Palo Alto Orchards Co., 195 F.2d 90 (1st Cir. 1952), Court Opinion	Palo Blanco Fruit Co. v. Palo Alto Orchards Co., 195 F.2d 90 (1st Cir. 1952), Court Opinion	Palo Blanco Fruit Co. v. Palo Alto Orchards Co.	X48IEE	OPINIONS	X48IEE	Order Affirmed	4578	\N	\N
 Chicago, M., St. P. & P. R. Co. v. Chicago & E. I. R. Co., 198 F.2d 8 (7th Cir. 1952), Court Opinion	Chicago, M., St. P. & P. R. Co. v. Chicago & E. I. R. Co., 198 F.2d 8 (7th Cir. 1952), Court Opinion	Chicago, M., St. P. & P. R. Co. v. Chicago & E. I. R. Co.	X44DT0	OPINIONS	X44DT0	Order Affirmed	10578	\N	\N
+Tobin v. Alstate Constr. Co, 195 F.2d 577, 10 WH Cases 619 (3d Cir. 1952), Court Opinion	Tobin v. Alstate Constr. Co, 195 F.2d 577, 10 WH Cases 619 (3d Cir. 1952), Court Opinion	Tobin v. Alstate Constr. Co	X48I26	OPINIONS	X48I26	Judgment Affirmed	10464	\N	\N
 Patent Scaffolding Co. v. Up-Right, Inc., 194 F.2d 457, 93 U.S.P.Q. 80 (9th Cir. 1952), Court Opinion	Patent Scaffolding Co. v. Up-Right, Inc., 194 F.2d 457, 93 U.S.P.Q. 80 (9th Cir. 1952), Court Opinion	Patent Scaffolding Co. v. Up-Right, Inc.	X44CNS	OPINIONS	X44CNS	Appeal Dismissed	13086	\N	\N
 NLRB v. Del E. Webb Constr. Co., 196 F.2d 702, 30 LRRM 2125 (8th Cir. 1952), Court Opinion	NLRB v. Del E. Webb Constr. Co., 196 F.2d 702, 30 LRRM 2125 (8th Cir. 1952), Court Opinion	NLRB v. Del E. Webb Constr. Co.	X414AV	OPINIONS	X414AV	Petition Denied	14491	\N	\N
 Mitchell v. Boen, 194 F.2d 405 (10th Cir. 1952), Court Opinion	Mitchell v. Boen, 194 F.2d 405 (10th Cir. 1952), Court Opinion	Mitchell v. Boen	X44CMK	OPINIONS	X44CMK	Order Affirmed	4382	\N	\N
@@ -717,7 +722,6 @@ Natl. Acceptance Co. of Chicago v. Magill, 196 F.2d 779 (7th Cir. 1952), Court O
 Berry v. Mid-Continent Petroleum Corp., 197 F.2d 522 (10th Cir. 1952), Court Opinion	Berry v. Mid-Continent Petroleum Corp., 197 F.2d 522 (10th Cir. 1952), Court Opinion	Berry v. Mid-Continent Petroleum Corp.	X3OEK0	OPINIONS	X3OEK0	Appeal Dismissed (Per Curiam)	4484	\N	\N
 NLRB v. Jamestown Veneer & Plywood Corp., 194 F.2d 192, 29 LRRM 2420 (2d Cir. 1952), Court Opinion	NLRB v. Jamestown Veneer & Plywood Corp., 194 F.2d 192, 29 LRRM 2420 (2d Cir. 1952), Court Opinion	NLRB v. Jamestown Veneer & Plywood Corp.	X44CH5	OPINIONS	X44CH5	Petition Granted (In Part), Petition Denied (In Part)	126	\N	\N
 Badham v. Alexander, 194 F.2d 535 (6th Cir. 1952), Court Opinion	Badham v. Alexander, 194 F.2d 535 (6th Cir. 1952), Court Opinion	Badham v. Alexander	X44CPD	OPINIONS	X44CPD	Judgment Affirmed (Per Curiam)	11447	\N	\N
-Tobin v. Alstate Constr. Co, 195 F.2d 577, 10 WH Cases 619 (3d Cir. 1952), Court Opinion	Tobin v. Alstate Constr. Co, 195 F.2d 577, 10 WH Cases 619 (3d Cir. 1952), Court Opinion	Tobin v. Alstate Constr. Co	X48I26	OPINIONS	X48I26	Judgment Affirmed	10464	\N	\N
 Pugh v. United States, 197 F.2d 509 (9th Cir. 1952), Court Opinion	Pugh v. United States, 197 F.2d 509 (9th Cir. 1952), Court Opinion	Pugh v. United States	X3OEJQ	OPINIONS	X3OEJQ	Motion To Dismiss Granted	13270	\N	\N
 Puente v. Commissioner, 52-2 USTC Para. 9544, 199 F.2d 940 (9th Cir. 1952), Court Opinion	Puente v. Commissioner, 52-2 USTC Para. 9544, 199 F.2d 940 (9th Cir. 1952), Court Opinion	Puente v. Commissioner	X3OFCP	OPINIONS	X3OFCP	Order Affirmed (Per Curiam)	13239	\N	\N
 Bigelow v. Balaban & Katz Corp., 199 F.2d 794 (7th Cir. 1952), Court Opinion	Bigelow v. Balaban & Katz Corp., 199 F.2d 794 (7th Cir. 1952), Court Opinion	Bigelow v. Balaban & Katz Corp.	X3OFAJ	OPINIONS	X3OFAJ	Order Affirmed, Order Modified	10406	\N	\N
@@ -748,8 +752,6 @@ Victrylite Candle Co. v. Brannan, 201 F.2d 206, 91 U.S. App. D.C. 386 (D.C. Cir.
 Sprading v. United States, 198 F.2d 528, 91 U.S. App. D.C. 417 (D.C. Cir. 1952), Court Opinion	Sprading v. United States, 198 F.2d 528, 91 U.S. App. D.C. 417 (D.C. Cir. 1952), Court Opinion	Sprading v. United States	X44DJ0	OPINIONS	X44DJ0	Judgment Affirmed (Per Curiam)		\N	\N
 NLRB v. Wallick, 198 F.2d 477, 30 LRRM 2529 (3d Cir. 1952), Court Opinion	NLRB v. Wallick, 198 F.2d 477, 30 LRRM 2529 (3d Cir. 1952), Court Opinion	NLRB v. Wallick	X44DJV	OPINIONS	X44DJV	Petition Granted	10705	\N	\N
 Sawyer v. U.S. Steel Co., 197 F.2d 582, 90 U.S. App. D.C. 416, 30 LRRM 2056 (D.C. Cir. 1952), Court Opinion	Sawyer v. U.S. Steel Co., 197 F.2d 582, 90 U.S. App. D.C. 416, 30 LRRM 2056 (D.C. Cir. 1952), Court Opinion	Sawyer v. U.S. Steel Co.	X3OEL6	OPINIONS	X3OEL6	Order Entered		\N	\N
-Bernstein v. FTC, 200 F.2d 404 (9th Cir. 1952), Court Opinion	Bernstein v. FTC, 200 F.2d 404 (9th Cir. 1952), Court Opinion	Bernstein v. FTC	X416CT	OPINIONS	X416CT	Order Affirmed	13104	\N	\N
-Godette v. United States, 199 F.2d 331 (4th Cir. 1952), Court Opinion	Godette v. United States, 199 F.2d 331 (4th Cir. 1952), Court Opinion	Godette v. United States	X3OF3K	OPINIONS	X3OF3K	Judgment Affirmed (Per Curiam)	6436	\N	\N
 Ingersoll v. Hunter, 194 F.2d 707 (8th Cir. 1952), Court Opinion	Ingersoll v. Hunter, 194 F.2d 707 (8th Cir. 1952), Court Opinion	Ingersoll v. Hunter	X44CVG	OPINIONS	X44CVG	Appeal Dismissed (Per Curiam)	14217	\N	\N
 Trathen v. United States, 198 F.2d 757 (3d Cir. 1952), Court Opinion	Trathen v. United States, 198 F.2d 757 (3d Cir. 1952), Court Opinion	Trathen v. United States	X44DQS	OPINIONS	X44DQS	Case Remanded, Judgment Reversed	10566	\N	\N
 Lloyd v. Thomas, 195 F.2d 486 (7th Cir. 1952), Court Opinion	Lloyd v. Thomas, 195 F.2d 486 (7th Cir. 1952), Court Opinion	Lloyd v. Thomas	X48HTK	OPINIONS	X48HTK	Judgment Affirmed	10428	\N	\N
@@ -889,7 +891,6 @@ Heay v. Phillips, 201 F.2d 220, 14 Alaska 132 (9th Cir. 1952), Court Opinion	Hea
 Gruber v. Wm. Coady & Co., 199 F.2d 554 (5th Cir. 1952), Court Opinion	Gruber v. Wm. Coady & Co., 199 F.2d 554 (5th Cir. 1952), Court Opinion	Gruber v. Wm. Coady & Co.	X3OF86	OPINIONS	X3OF86	Judgment Reversed, Case Remanded	13945	\N	\N
 Risken v. United States, 197 F.2d 959 (8th Cir. 1952), Court Opinion	Risken v. United States, 197 F.2d 959 (8th Cir. 1952), Court Opinion	Risken v. United States	X3OESL	OPINIONS	X3OESL	Order Affirmed	14524	\N	\N
 Dillard v. Chesapeake & O. Ry., 199 F.2d 948, 31 LRRM 2102, 9 FEP Cases 418 (4th Cir. 1952), Court Opinion	Dillard v. Chesapeake & O. Ry., 199 F.2d 948, 31 LRRM 2102, 9 FEP Cases 418 (4th Cir. 1952), Court Opinion	Dillard v. Chesapeake & O. Ry.	X3OFDT	OPINIONS	X3OFDT	Order Reversed, Case Remanded	6454	\N	\N
-Jones v. Squier, 195 F.2d 179 (9th Cir. 1952), Court Opinion	Jones v. Squier, 195 F.2d 179 (9th Cir. 1952), Court Opinion	Jones v. Squier	X48HI4	OPINIONS	X48HI4	Order Affirmed	13200	\N	\N
 Employers Mutual Liab. Ins. Co. of Wisconsin v. Konvicka, 197 F.2d 691 (5th Cir. 1952), Court Opinion	Employers Mutual Liab. Ins. Co. of Wisconsin v. Konvicka, 197 F.2d 691 (5th Cir. 1952), Court Opinion	Employers Mutual Liab. Ins. Co. of Wisconsin v. Konvicka	X3OENP	OPINIONS	X3OENP	Judgment Affirmed	13819	\N	\N
 United States v. Riccardi, 200 F.2d 197 (3d Cir. 1952), Court Opinion	United States v. Riccardi, 200 F.2d 197 (3d Cir. 1952), Court Opinion	United States v. Riccardi	X4169H	OPINIONS	X4169H	Judgment Affirmed (Per Curiam)	10836	\N	\N
 Tyrrell v. United States, 200 F.2d 8 (9th Cir. 1952), Court Opinion	Tyrrell v. United States, 200 F.2d 8 (9th Cir. 1952), Court Opinion	Tyrrell v. United States	X416R6	OPINIONS	X416R6	Judgment Affirmed	12991	\N	\N
@@ -1358,6 +1359,7 @@ Peerless Hosiery Co. v. Northern Ins. Co., 199 F.2d 957 (2d Cir. 1952), Court Op
 Dockery v. Hiatt, 197 F.2d 333 (5th Cir. 1952), Court Opinion	Dockery v. Hiatt, 197 F.2d 333 (5th Cir. 1952), Court Opinion	Dockery v. Hiatt	X3OEI0	OPINIONS	X3OEI0	Order Affirmed		\N	\N
 G. Ricordi & Co. v. Haendler, 194 F.2d 914, 92 U.S.P.Q. 340 (2d Cir. 1952), Court Opinion	G. Ricordi & Co. v. Haendler, 194 F.2d 914, 92 U.S.P.Q. 340 (2d Cir. 1952), Court Opinion	G. Ricordi & Co. v. Haendler	X44D5D	OPINIONS	X44D5D	Order Affirmed	146	\N	\N
 Compania De Navegacion Cebaco, S. A. v. Steel Flyer, 200 F.2d 643 (4th Cir. 1952), Court Opinion	Compania De Navegacion Cebaco, S. A. v. Steel Flyer, 200 F.2d 643 (4th Cir. 1952), Court Opinion	Compania De Navegacion Cebaco, S. A. v. Steel Flyer	X416IH	OPINIONS	X416IH	Judgment Affirmed (In Part), Judgment Reversed (In Part), Judgment Modified, Case Remanded	6431	\N	\N
+Allstate Ins. Co. v. Moldenhauer, 193 F.2d 663 (7th Cir. 1952), Court Opinion	Allstate Ins. Co. v. Moldenhauer, 193 F.2d 663 (7th Cir. 1952), Court Opinion	Allstate Ins. Co. v. Moldenhauer	X44C7A	OPINIONS	X44C7A	Judgment Affirmed	10266	\N	\N
 Stewart-Warner Corp. v. NLRB, 194 F.2d 207, 29 LRRM 2427 (4th Cir. 1952), Court Opinion	Stewart-Warner Corp. v. NLRB, 194 F.2d 207, 29 LRRM 2427 (4th Cir. 1952), Court Opinion	Stewart-Warner Corp. v. NLRB	X44CHB	OPINIONS	X44CHB	Order Set Aside, Petition Dismissed	6299	\N	\N
 Hadden v. Rumsey Products, Inc., 196 F.2d 92 (2d Cir. 1952), Court Opinion	Hadden v. Rumsey Products, Inc., 196 F.2d 92 (2d Cir. 1952), Court Opinion	Hadden v. Rumsey Products, Inc.	X414GR	OPINIONS	X414GR	Order Entered, Case Remanded, Judgment Reversed	106	\N	\N
 Shanks Village Comm. against Rent Increases v. Cary, 197 F.2d 212 (2d Cir. 1952), Court Opinion	Shanks Village Comm. against Rent Increases v. Cary, 197 F.2d 212 (2d Cir. 1952), Court Opinion	Shanks Village Comm. against Rent Increases v. Cary	X3OEEV	OPINIONS	X3OEEV	Order Vacated, Case Remanded	253	\N	\N
@@ -1386,6 +1388,7 @@ Acheson v. Albert, 195 F.2d 573, 90 U.S. App. D.C. 294 (D.C. Cir. 1952), Court O
 Wells v. Simonds Abrasive Co., 195 F.2d 814 (3d Cir. 1952), Court Opinion	Wells v. Simonds Abrasive Co., 195 F.2d 814 (3d Cir. 1952), Court Opinion	Wells v. Simonds Abrasive Co.	X48IAN	OPINIONS	X48IAN	Judgment Affirmed, Rehearing Denied (Per Curiam)	10549	\N	\N
 Butler v. Ungerleider, 199 F.2d 709 (2d Cir. 1952), Court Opinion	Butler v. Ungerleider, 199 F.2d 709 (2d Cir. 1952), Court Opinion	Butler v. Ungerleider	X3OF9H	OPINIONS	X3OF9H	Order Affirmed (Per Curiam)		\N	\N
 Jones v. United States, 195 F.2d 707, 13 Alaska 629 (9th Cir. 1952), Court Opinion	Jones v. United States, 195 F.2d 707, 13 Alaska 629 (9th Cir. 1952), Court Opinion	Jones v. United States	X48I5T	OPINIONS	X48I5T	Judgment Affirmed		\N	\N
+Braswell v. United States, 200 F.2d 597 (5th Cir. 1952), Court Opinion	Braswell v. United States, 200 F.2d 597 (5th Cir. 1952), Court Opinion	Braswell v. United States	X416HD	OPINIONS	X416HD	Conviction Reversed	13905	\N	\N
 NLRB v. Red Arrow Freight Line, Inc., 193 F.2d 979, 29 LRRM 2390 (5th Cir. 1952), Court Opinion	NLRB v. Red Arrow Freight Line, Inc., 193 F.2d 979, 29 LRRM 2390 (5th Cir. 1952), Court Opinion	NLRB v. Red Arrow Freight Line, Inc.	X44CDE	OPINIONS	X44CDE	Order Entered	12672	\N	\N
 Emerman v. Cohen, 199 F.2d 857 (2d Cir. 1952), Court Opinion	Emerman v. Cohen, 199 F.2d 857 (2d Cir. 1952), Court Opinion	Emerman v. Cohen	X3OFC0	OPINIONS	X3OFC0	Judgment Affirmed	32	\N	\N
 Zamloch v. United States, 193 F.2d 889 (9th Cir. 1952), Court Opinion	Zamloch v. United States, 193 F.2d 889 (9th Cir. 1952), Court Opinion	Zamloch v. United States	X44CBG	OPINIONS	X44CBG	Judgment Affirmed		\N	\N
@@ -1414,6 +1417,7 @@ Story v. Hunter, 193 F.2d 874 (10th Cir. 1952), Court Opinion	Story v. Hunter, 1
 Murray v. Gadsden, 197 F.2d 194, 91 U.S. App. D.C. 38 (D.C. Cir. 1952), Court Opinion	Murray v. Gadsden, 197 F.2d 194, 91 U.S. App. D.C. 38 (D.C. Cir. 1952), Court Opinion	Murray v. Gadsden	X3OEFP	OPINIONS	X3OEFP	Judgment Reversed, Case Remanded		\N	\N
 Moreno v. United States, 195 F.2d 208, 90 U.S. App. D.C. 264 (D.C. Cir. 1952), Court Opinion	Moreno v. United States, 195 F.2d 208, 90 U.S. App. D.C. 264 (D.C. Cir. 1952), Court Opinion	Moreno v. United States	X48HK5	OPINIONS	X48HK5	Judgment Affirmed (Per Curiam)		\N	\N
 Imboden v. United States, 194 F.2d 508 (6th Cir. 1952), Court Opinion	Imboden v. United States, 194 F.2d 508 (6th Cir. 1952), Court Opinion	Imboden v. United States	X44CP0	OPINIONS	X44CP0	Judgment Affirmed	11420	\N	\N
+Weiss v. United States, 199 F.2d 454 (2d Cir. 1952), Court Opinion	Weiss v. United States, 199 F.2d 454 (2d Cir. 1952), Court Opinion	Weiss v. United States	X3OF60	OPINIONS	X3OF60	Order Affirmed	31	\N	\N
 Meinhard, Greeff & Co. v. Brown, 199 F.2d 70 (4th Cir. 1952), Court Opinion	Meinhard, Greeff & Co. v. Brown, 199 F.2d 70 (4th Cir. 1952), Court Opinion	Meinhard, Greeff & Co. v. Brown	X3OF96	OPINIONS	X3OF96	Judgment Reversed (In Part), Judgment Affirmed (In Part), Case Remanded	6443	\N	\N
 Booth Newspapers, Inc. v. Commissioner, 53-1 USTC Para. 9150, 201 F.2d 55 (6th Cir. 1952), Court Opinion	Booth Newspapers, Inc. v. Commissioner, 53-1 USTC Para. 9150, 201 F.2d 55 (6th Cir. 1952), Court Opinion	Booth Newspapers, Inc. v. Commissioner	X43S5D	OPINIONS	X43S5D	Judgment Affirmed (Per Curiam)	11540	\N	\N
 Virginia-Carolina Chemical Corp. v. Industrial Products Corp., 195 F.2d 552 (6th Cir. 1952), Court Opinion	Virginia-Carolina Chemical Corp. v. Industrial Products Corp., 195 F.2d 552 (6th Cir. 1952), Court Opinion	Virginia-Carolina Chemical Corp. v. Industrial Products Corp.	X48I0F	OPINIONS	X48I0F	Judgment Reversed, Case Remanded	11342	\N	\N
@@ -1442,7 +1446,6 @@ Costello v. Golden, 196 F.2d 1017 (9th Cir. 1952), Court Opinion	Costello v. Gol
 Stirk v. Mutual Life Ins. Co. of New York, 199 F.2d 874 (10th Cir. 1952), Court Opinion	Stirk v. Mutual Life Ins. Co. of New York, 199 F.2d 874 (10th Cir. 1952), Court Opinion	Stirk v. Mutual Life Ins. Co. of New York	X3OFBF	OPINIONS	X3OFBF	Judgment Affirmed	4470	\N	\N
 Flota Mercante del Estado v. Orient Ins. Co., 198 F.2d 740 (5th Cir. 1952), Court Opinion	Flota Mercante del Estado v. Orient Ins. Co., 198 F.2d 740 (5th Cir. 1952), Court Opinion	Flota Mercante del Estado v. Orient Ins. Co.	X44DQ0	OPINIONS	X44DQ0	Judgment Affirmed	13933	\N	\N
 Bennett v. Amalgamated Casualty Ins. Co., 200 F.2d 129, 91 U.S. App. D.C. 279 (D.C. Cir. 1952), Court Opinion	Bennett v. Amalgamated Casualty Ins. Co., 200 F.2d 129, 91 U.S. App. D.C. 279 (D.C. Cir. 1952), Court Opinion	Bennett v. Amalgamated Casualty Ins. Co.	X41676	OPINIONS	X41676	Order Affirmed		\N	\N
-Allstate Ins. Co. v. Moldenhauer, 193 F.2d 663 (7th Cir. 1952), Court Opinion	Allstate Ins. Co. v. Moldenhauer, 193 F.2d 663 (7th Cir. 1952), Court Opinion	Allstate Ins. Co. v. Moldenhauer	X44C7A	OPINIONS	X44C7A	Judgment Affirmed	10266	\N	\N
 Acheson v. Droesse, 197 F.2d 574, 90 U.S. App. D.C. 143 (D.C. Cir. 1952), Court Opinion	Acheson v. Droesse, 197 F.2d 574, 90 U.S. App. D.C. 143 (D.C. Cir. 1952), Court Opinion	Acheson v. Droesse	X3OEKM	OPINIONS	X3OEKM	Order Entered, Appeal Dismissed, Case Remanded		\N	\N
 Steeber v. United States, 198 F.2d 615 (10th Cir. 1952), Court Opinion	Steeber v. United States, 198 F.2d 615 (10th Cir. 1952), Court Opinion	Steeber v. United States	X44DMJ	OPINIONS	X44DMJ	Judgment Reversed	4428	\N	\N
 United States v. Wantland, 199 F.2d 237 (7th Cir. 1952), Court Opinion	United States v. Wantland, 199 F.2d 237 (7th Cir. 1952), Court Opinion	United States v. Wantland	X3OF29	OPINIONS	X3OF29	Judgment Reversed, Case Remanded	10623	\N	\N
@@ -1499,8 +1502,6 @@ Poole v. Clagett, 196 F.2d 775, 90 U.S. App. D.C. 412 (D.C. Cir. 1952), Court Op
 Boyer v. Anderson, 194 F.2d 305 (7th Cir. 1952), Court Opinion	Boyer v. Anderson, 194 F.2d 305 (7th Cir. 1952), Court Opinion	Boyer v. Anderson	X44CL7	OPINIONS	X44CL7	Judgment Affirmed	10466	\N	\N
 McDonold v. United States, 200 F.2d 502 (5th Cir. 1952), Court Opinion	McDonold v. United States, 200 F.2d 502 (5th Cir. 1952), Court Opinion	McDonold v. United States	X416ET	OPINIONS	X416ET	Judgment Affirmed	14018	\N	\N
 Edwards v. Commonwealth Mutual Fire Ins. Co. of Pennsylvania, 197 F.2d 62 (3d Cir. 1952), Court Opinion	Edwards v. Commonwealth Mutual Fire Ins. Co. of Pennsylvania, 197 F.2d 62 (3d Cir. 1952), Court Opinion	Edwards v. Commonwealth Mutual Fire Ins. Co. of Pennsylvania	X3OEMT	OPINIONS	X3OEMT	Judgment Affirmed	10638	\N	\N
-Braswell v. United States, 200 F.2d 597 (5th Cir. 1952), Court Opinion	Braswell v. United States, 200 F.2d 597 (5th Cir. 1952), Court Opinion	Braswell v. United States	X416HD	OPINIONS	X416HD	Conviction Reversed	13905	\N	\N
-Weiss v. United States, 199 F.2d 454 (2d Cir. 1952), Court Opinion	Weiss v. United States, 199 F.2d 454 (2d Cir. 1952), Court Opinion	Weiss v. United States	X3OF60	OPINIONS	X3OF60	Order Affirmed	31	\N	\N
 In re Adoption of a Minor, 194 F.2d 325, 90 U.S. App. D.C. 107 (D.C. Cir. 1952), Court Opinion	In re Adoption of a Minor, 194 F.2d 325, 90 U.S. App. D.C. 107 (D.C. Cir. 1952), Court Opinion	In re Adoption of a Minor	X44CKF	OPINIONS	X44CKF	Case Remanded		\N	\N
 Voltz v. United States, 196 F.2d 298 (5th Cir. 1952), Court Opinion	Voltz v. United States, 196 F.2d 298 (5th Cir. 1952), Court Opinion	Voltz v. United States	X41445	OPINIONS	X41445	Order Affirmed	13900	\N	\N
 John Walker & Sons, Ltd. v. Tampa Cigar Co., 197 F.2d 72, 93 U.S.P.Q. 392 (5th Cir. 1952), Court Opinion	John Walker & Sons, Ltd. v. Tampa Cigar Co., 197 F.2d 72, 93 U.S.P.Q. 392 (5th Cir. 1952), Court Opinion	John Walker & Sons, Ltd. v. Tampa Cigar Co.	X3OEOG	OPINIONS	X3OEOG	Judgment Reversed, Case Remanded	13837	\N	\N
@@ -1528,6 +1529,7 @@ Henson v. Welch, 199 F.2d 367 (4th Cir. 1952), Court Opinion	Henson v. Welch, 19
 Gelhaus v. Eastern Air Lines, Inc., 194 F.2d 772, 29 LRRM 2554 (5th Cir. 1952), Court Opinion	Gelhaus v. Eastern Air Lines, Inc., 194 F.2d 772, 29 LRRM 2554 (5th Cir. 1952), Court Opinion	Gelhaus v. Eastern Air Lines, Inc.	X44D0A	OPINIONS	X44D0A	Judgment Affirmed	13357	\N	\N
 Home Loan Bank Bd. v. Mallonee, 196 F.2d 336 (9th Cir. 1952), Court Opinion	Home Loan Bank Bd. v. Mallonee, 196 F.2d 336 (9th Cir. 1952), Court Opinion	Home Loan Bank Bd. v. Mallonee	X4144C	OPINIONS	X4144C	Order Reversed, Order Entered	12511	\N	\N
 McClendon v. Straub, 193 F.2d 596 (5th Cir. 1952), Court Opinion	McClendon v. Straub, 193 F.2d 596 (5th Cir. 1952), Court Opinion	McClendon v. Straub	X44C5C	OPINIONS	X44C5C	Judgment Vacated (In Part), Case Remanded	13748	\N	\N
+R. L. Polk & Co. v. Musser, 196 F.2d 1020, 93 U.S.P.Q. 468 (3d Cir. 1952), Court Opinion	R. L. Polk & Co. v. Musser, 196 F.2d 1020, 93 U.S.P.Q. 468 (3d Cir. 1952), Court Opinion	R. L. Polk & Co. v. Musser	X413UT	OPINIONS	X413UT	Judgment Affirmed (Per Curiam)	10707	\N	\N
 Pep Boys-Manny, Moe & Jack v. Edwin F. Guth Co., 197 F.2d 527, 94 U.S.P.Q. 158 (C.C.P.A. 1952), Court Opinion	Pep Boys-Manny, Moe & Jack v. Edwin F. Guth Co., 197 F.2d 527, 94 U.S.P.Q. 158 (C.C.P.A. 1952), Court Opinion	Pep Boys-Manny, Moe & Jack v. Edwin F. Guth Co.	XIF0G3	OPINIONS	XIF0G3	Judgment Reversed	5864	\N	\N
 Paris v. Central Chiclera, S. De R. L., 193 F.2d 960 (5th Cir. 1952), Court Opinion	Paris v. Central Chiclera, S. De R. L., 193 F.2d 960 (5th Cir. 1952), Court Opinion	Paris v. Central Chiclera, S. De R. L.	X44CCT	OPINIONS	X44CCT	Judgment Affirmed, Judgment Modified, Case Remanded	13459	\N	\N
 Calderon v. United States, 196 F.2d 554 (10th Cir. 1952), Court Opinion	Calderon v. United States, 196 F.2d 554 (10th Cir. 1952), Court Opinion	Calderon v. United States	X4146F	OPINIONS	X4146F	Judgment Affirmed	4408	\N	\N
@@ -1555,7 +1557,6 @@ Pittsburgh Courier Public Co. v. Lubore, 200 F.2d 355, 91 U.S. App. D.C. 311 (D.
 Holland Co. v. American Steel Foundries, 196 F.2d 749, 93 U.S.P.Q. 186 (7th Cir. 1952), Court Opinion	Holland Co. v. American Steel Foundries, 196 F.2d 749, 93 U.S.P.Q. 186 (7th Cir. 1952), Court Opinion	Holland Co. v. American Steel Foundries	X414BA	OPINIONS	X414BA	Judgment Affirmed	10548	\N	\N
 United States v. McCrillis, 200 F.2d 884 (1st Cir. 1952), Court Opinion	United States v. McCrillis, 200 F.2d 884 (1st Cir. 1952), Court Opinion	United States v. McCrillis	X416QG	OPINIONS	X416QG	Judgment Affirmed	4673	\N	\N
 Fidelity-Phenix Fire Ins. Co. of New York v. Pilot Freight Carriers, Inc., 193 F.2d 812 (4th Cir. 1952), Court Opinion	Fidelity-Phenix Fire Ins. Co. of New York v. Pilot Freight Carriers, Inc., 193 F.2d 812 (4th Cir. 1952), Court Opinion	Fidelity-Phenix Fire Ins. Co. of New York v. Pilot Freight Carriers, Inc.	X44CB7	OPINIONS	X44CB7	Judgment Reversed, Case Remanded	6338	\N	\N
-R. L. Polk & Co. v. Musser, 196 F.2d 1020, 93 U.S.P.Q. 468 (3d Cir. 1952), Court Opinion	R. L. Polk & Co. v. Musser, 196 F.2d 1020, 93 U.S.P.Q. 468 (3d Cir. 1952), Court Opinion	R. L. Polk & Co. v. Musser	X413UT	OPINIONS	X413UT	Judgment Affirmed (Per Curiam)	10707	\N	\N
 Louisiana Power & Light Co. v. Sutherland Specialty Co., 194 F.2d 586 (5th Cir. 1952), Court Opinion	Louisiana Power & Light Co. v. Sutherland Specialty Co., 194 F.2d 586 (5th Cir. 1952), Court Opinion	Louisiana Power & Light Co. v. Sutherland Specialty Co.	X44CS3	OPINIONS	X44CS3	Order Entered	13580	\N	\N
 American Smelting & Refining Co. v. Maloy, 199 F.2d 52 (5th Cir. 1952), Court Opinion	American Smelting & Refining Co. v. Maloy, 199 F.2d 52 (5th Cir. 1952), Court Opinion	American Smelting & Refining Co. v. Maloy	X3OF7I	OPINIONS	X3OF7I	Rehearing Denied	13738	\N	\N
 Monroe v. United Carbon Co., 196 F.2d 455 (5th Cir. 1952), Court Opinion	Monroe v. United Carbon Co., 196 F.2d 455 (5th Cir. 1952), Court Opinion	Monroe v. United Carbon Co.	X4144N	OPINIONS	X4144N	Judgment Affirmed	13717	\N	\N
@@ -1668,6 +1669,7 @@ Ayres v. United States, 193 F.2d 739 (5th Cir. 1952), Court Opinion	Ayres v. Uni
 Lewis v. Moore, 199 F.2d 745 (10th Cir. 1952), Court Opinion	Lewis v. Moore, 199 F.2d 745 (10th Cir. 1952), Court Opinion	Lewis v. Moore	X3OF9M	OPINIONS	X3OF9M	Order Affirmed	4480	\N	\N
 RKO Radio Pictures, Inc. v. Sheridan, 195 F.2d 167 (9th Cir. 1952), Court Opinion	RKO Radio Pictures, Inc. v. Sheridan, 195 F.2d 167 (9th Cir. 1952), Court Opinion	RKO Radio Pictures, Inc. v. Sheridan	X48HGP	OPINIONS	X48HGP	Judgment Reversed, Case Remanded	12927	\N	\N
 Bork Mfg. Co. v. FTC, 194 F.2d 611 (9th Cir. 1952), Court Opinion	Bork Mfg. Co. v. FTC, 194 F.2d 611 (9th Cir. 1952), Court Opinion	Bork Mfg. Co. v. FTC	X44CSR	OPINIONS	X44CSR	Order Affirmed, Order Corrected (Per Curiam)	12796	\N	\N
+United Motion Theatre Co. v. Ealand, 199 F.2d 371 (6th Cir. 1952), Court Opinion	United Motion Theatre Co. v. Ealand, 199 F.2d 371 (6th Cir. 1952), Court Opinion	United Motion Theatre Co. v. Ealand	X3OF47	OPINIONS	X3OF47	Order Affirmed, Order Modified (Per Curiam)	11243	\N	\N
 NLRB v. United Mine Workers, Dist. 31, & Locals Nos. 4050, 4346, 1379, 2338, 4047, & 8327, 198 F.2d 389, 30 LRRM 2445 (4th Cir. 1952), Court Opinion	NLRB v. United Mine Workers, Dist. 31, & Locals Nos. 4050, 4346, 1379, 2338, 4047, & 8327, 198 F.2d 389, 30 LRRM 2445 (4th Cir. 1952), Court Opinion	NLRB v. United Mine Workers, Dist. 31, & Locals Nos. 4050, 4346, 1379, 2338, 4047, & 8327	X44DG0	OPINIONS	X44DG0	Petition Granted (Per Curiam)	6409	\N	\N
 Minneapolis-Moline Co. v. Chicago, Milwaukee, St. Paul & Pacific R.R., 199 F.2d 725 (8th Cir. 1952), Court Opinion	Minneapolis-Moline Co. v. Chicago, Milwaukee, St. Paul & Pacific R.R., 199 F.2d 725 (8th Cir. 1952), Court Opinion	Minneapolis-Moline Co. v. Chicago, Milwaukee, St. Paul & Pacific R.R.	X3OFA7	OPINIONS	X3OFA7	Judgment Affirmed	14565	\N	\N
 Lewis v. United States, 194 F.2d 689 (3d Cir. 1952), Court Opinion	Lewis v. United States, 194 F.2d 689 (3d Cir. 1952), Court Opinion	Lewis v. United States	X44CV6	OPINIONS	X44CV6	Judgment Affirmed	10522	\N	\N
@@ -1696,7 +1698,6 @@ United States v. Chicago, B. & Q. R. Co., 199 F.2d 223 (7th Cir. 1952), Court Op
 Reeber v. Rossell, 200 F.2d 334 (2d Cir. 1952), Court Opinion	Reeber v. Rossell, 200 F.2d 334 (2d Cir. 1952), Court Opinion	Reeber v. Rossell	X416B4	OPINIONS	X416B4	Judgment Affirmed, Judgment Modified (Per Curiam)	71	\N	\N
 Slater v. Peyser, 200 F.2d 360, 91 U.S. App. D.C. 314 (D.C. Cir. 1952), Court Opinion	Slater v. Peyser, 200 F.2d 360, 91 U.S. App. D.C. 314 (D.C. Cir. 1952), Court Opinion	Slater v. Peyser	X416BC	OPINIONS	X416BC	Appeal Dismissed		\N	\N
 Ham v. Blankenship, 194 F.2d 430 (5th Cir. 1952), Court Opinion	Ham v. Blankenship, 194 F.2d 430 (5th Cir. 1952), Court Opinion	Ham v. Blankenship	X54CBI	OPINIONS	X54CBI	Judgment Affirmed	13686	\N	\N
-United Motion Theatre Co. v. Ealand, 199 F.2d 371 (6th Cir. 1952), Court Opinion	United Motion Theatre Co. v. Ealand, 199 F.2d 371 (6th Cir. 1952), Court Opinion	United Motion Theatre Co. v. Ealand	X3OF47	OPINIONS	X3OF47	Order Affirmed, Order Modified (Per Curiam)	11243	\N	\N
 Hansen v. Arabian American Oil Co., 195 F.2d 682 (2d Cir. 1952), Court Opinion	Hansen v. Arabian American Oil Co., 195 F.2d 682 (2d Cir. 1952), Court Opinion	Hansen v. Arabian American Oil Co.	X48I4S	OPINIONS	X48I4S	Judgment Affirmed (Per Curiam)	177	\N	\N
 United States v. Lavelle, 194 F.2d 202 (2d Cir. 1952), Court Opinion	United States v. Lavelle, 194 F.2d 202 (2d Cir. 1952), Court Opinion	United States v. Lavelle	X44CI4	OPINIONS	X44CI4	Order Reversed, Case Remanded	25	\N	\N
 Del E. Webb Constr. Co. v. NLRB, 196 F.2d 841, 30 LRRM 2108 (8th Cir. 1952), Court Opinion	Del E. Webb Constr. Co. v. NLRB, 196 F.2d 841, 30 LRRM 2108 (8th Cir. 1952), Court Opinion	Del E. Webb Constr. Co. v. NLRB	X414DU	OPINIONS	X414DU	Order Entered	14428	\N	\N
@@ -2080,6 +2081,7 @@ United States ex rel. Holly v. Claudy, 196 F.2d 1017 (3d Cir. 1952), Court Opini
 Montgomery v. United States, 196 F.2d 1020 (6th Cir. 1952), Court Opinion	Montgomery v. United States, 196 F.2d 1020 (6th Cir. 1952), Court Opinion	Montgomery v. United States	X413U8	OPINIONS	X413U8	Judgment Affirmed (Per Curiam)	11505	\N	\N
 McCord v. Granger, 53-1 USTC Para. 9134, 201 F.2d 103 (3d Cir. 1952), Court Opinion	McCord v. Granger, 53-1 USTC Para. 9134, 201 F.2d 103 (3d Cir. 1952), Court Opinion	McCord v. Granger	X43S0R	OPINIONS	X43S0R	Order Reversed, Case Remanded	10731	\N	\N
 Ranger, Inc. v. Equitable Life Assurance Society of U.S., 196 F.2d 968 (6th Cir. 1952), Court Opinion	Ranger, Inc. v. Equitable Life Assurance Society of U.S., 196 F.2d 968 (6th Cir. 1952), Court Opinion	Ranger, Inc. v. Equitable Life Assurance Society of U.S.	X414ID	OPINIONS	X414ID	Judgment Affirmed	11360	\N	\N
+McCranie v. United States, 199 F.2d 581 (5th Cir. 1952), Court Opinion	McCranie v. United States, 199 F.2d 581 (5th Cir. 1952), Court Opinion	McCranie v. United States	X3OF89	OPINIONS	X3OF89	Judgment Affirmed (Per Curiam)	14145	\N	\N
 Transcontinental Gas Pipe Line Corp. v. Gault, 198 F.2d 196 (4th Cir. 1952), Court Opinion	Transcontinental Gas Pipe Line Corp. v. Gault, 198 F.2d 196 (4th Cir. 1952), Court Opinion	Transcontinental Gas Pipe Line Corp. v. Gault	X44DAC	OPINIONS	X44DAC	Judgment Affirmed, Case Remanded (Per Curiam)	6416	\N	\N
 United States v. Bazell, 194 F.2d 745 (7th Cir. 1952), Court Opinion	United States v. Bazell, 194 F.2d 745 (7th Cir. 1952), Court Opinion	United States v. Bazell	X44D12	OPINIONS	X44D12	Judgment Reversed, Case Remanded	10486	\N	\N
 McConville v. United States, 197 F.2d 680 (2d Cir. 1952), Court Opinion	McConville v. United States, 197 F.2d 680 (2d Cir. 1952), Court Opinion	McConville v. United States	X3OEN7	OPINIONS	X3OEN7	Judgment Affirmed, Judgment Modified	251	\N	\N
@@ -2108,7 +2110,6 @@ Converse v. Sullivan, 194 F.2d 995 (7th Cir. 1952), Court Opinion	Converse v. Su
 RCA Communications, Inc. v. FCC, 201 F.2d 694, 91 U.S. App. D.C. 289 (D.C. Cir. 1952), Court Opinion	RCA Communications, Inc. v. FCC, 201 F.2d 694, 91 U.S. App. D.C. 289 (D.C. Cir. 1952), Court Opinion	RCA Communications, Inc. v. FCC	X43S7H	OPINIONS	X43S7H	Judgment Reversed		\N	\N
 United States v. W. H. Kistler Stationery Co., 200 F.2d 805, 11 WH Cases 207 (10th Cir. 1952), Court Opinion	United States v. W. H. Kistler Stationery Co., 200 F.2d 805, 11 WH Cases 207 (10th Cir. 1952), Court Opinion	United States v. W. H. Kistler Stationery Co.	X416N4	OPINIONS	X416N4	Judgment Affirmed	4520	\N	\N
 Van der Horst Corp. of America v. Chromium Corp. of America, 198 F.2d 748, 94 U.S.P.Q. 288 (2d Cir. 1952), Court Opinion	Van der Horst Corp. of America v. Chromium Corp. of America, 198 F.2d 748, 94 U.S.P.Q. 288 (2d Cir. 1952), Court Opinion	Van der Horst Corp. of America v. Chromium Corp. of America	X44DQO	OPINIONS	X44DQO	Petition Denied (Per Curiam)	178	\N	\N
-McCranie v. United States, 199 F.2d 581 (5th Cir. 1952), Court Opinion	McCranie v. United States, 199 F.2d 581 (5th Cir. 1952), Court Opinion	McCranie v. United States	X3OF89	OPINIONS	X3OF89	Judgment Affirmed (Per Curiam)	14145	\N	\N
 United States v. Girgenti, 197 F.2d 218 (3d Cir. 1952), Court Opinion	United States v. Girgenti, 197 F.2d 218 (3d Cir. 1952), Court Opinion	United States v. Girgenti	X3OEFU	OPINIONS	X3OEFU	Conviction Reversed	10457	\N	\N
 Maryland Casualty Co. v. Paton, 194 F.2d 765 (9th Cir. 1952), Court Opinion	Maryland Casualty Co. v. Paton, 194 F.2d 765 (9th Cir. 1952), Court Opinion	Maryland Casualty Co. v. Paton	X44D17	OPINIONS	X44D17	Judgment Affirmed	12937	\N	\N
 Crolich v. United States, 196 F.2d 879 (5th Cir. 1952), Court Opinion	Crolich v. United States, 196 F.2d 879 (5th Cir. 1952), Court Opinion	Crolich v. United States	X414EV	OPINIONS	X414EV	Judgment Affirmed	13843	\N	\N
@@ -2637,6 +2638,8 @@ COPY public.citations (id, cite_name, doc_id_id) FROM stdin;
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
+1	2021-08-17 11:06:19.188159+00	2	user	1	[{"added": {}}]	4	1
+2	2021-08-17 11:07:08.43968+00	2	user	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
 \.
 
 
@@ -2645,32 +2648,32 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2021-08-11 20:13:59.496124+00
-2	auth	0001_initial	2021-08-11 20:13:59.57096+00
-3	admin	0001_initial	2021-08-11 20:13:59.585023+00
-4	admin	0002_logentry_remove_auto_add	2021-08-11 20:13:59.591701+00
-5	admin	0003_logentry_add_action_flag_choices	2021-08-11 20:13:59.598278+00
-6	contenttypes	0002_remove_content_type_name	2021-08-11 20:13:59.61236+00
-7	auth	0002_alter_permission_name_max_length	2021-08-11 20:13:59.619233+00
-8	auth	0003_alter_user_email_max_length	2021-08-11 20:13:59.625969+00
-9	auth	0004_alter_user_username_opts	2021-08-11 20:13:59.633292+00
-10	auth	0005_alter_user_last_login_null	2021-08-11 20:13:59.64085+00
-11	auth	0006_require_contenttypes_0002	2021-08-11 20:13:59.642459+00
-12	auth	0007_alter_validators_add_error_messages	2021-08-11 20:13:59.649051+00
-13	auth	0008_alter_user_username_max_length	2021-08-11 20:13:59.657459+00
-14	auth	0009_alter_user_last_name_max_length	2021-08-11 20:13:59.665577+00
-15	auth	0010_alter_group_name_max_length	2021-08-11 20:13:59.673004+00
-16	auth	0011_update_proxy_permissions	2021-08-11 20:13:59.679197+00
-17	auth	0012_alter_user_first_name_max_length	2021-08-11 20:13:59.685774+00
-18	authtoken	0001_initial	2021-08-11 20:13:59.697326+00
-19	authtoken	0002_auto_20160226_1747	2021-08-11 20:13:59.71981+00
-20	authtoken	0003_tokenproxy	2021-08-11 20:13:59.722949+00
-21	caseapi	0001_initial	2021-08-11 20:13:59.777013+00
-22	caseapi	0002_auto_20210719_2212	2021-08-11 20:13:59.822012+00
-23	caseapi	0003_alter_casemeta_docket_number	2021-08-11 20:13:59.828652+00
-24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-11 20:13:59.834058+00
-25	sessions	0001_initial	2021-08-11 20:13:59.843993+00
-26	caseapi	0005_auto_20210811_2017	2021-08-11 20:17:16.034051+00
+1	contenttypes	0001_initial	2021-08-17 11:04:11.523555+00
+2	auth	0001_initial	2021-08-17 11:04:11.578334+00
+3	admin	0001_initial	2021-08-17 11:04:11.595148+00
+4	admin	0002_logentry_remove_auto_add	2021-08-17 11:04:11.602435+00
+5	admin	0003_logentry_add_action_flag_choices	2021-08-17 11:04:11.609806+00
+6	contenttypes	0002_remove_content_type_name	2021-08-17 11:04:11.625217+00
+7	auth	0002_alter_permission_name_max_length	2021-08-17 11:04:11.632659+00
+8	auth	0003_alter_user_email_max_length	2021-08-17 11:04:11.640788+00
+9	auth	0004_alter_user_username_opts	2021-08-17 11:04:11.648036+00
+10	auth	0005_alter_user_last_login_null	2021-08-17 11:04:11.656135+00
+11	auth	0006_require_contenttypes_0002	2021-08-17 11:04:11.658279+00
+12	auth	0007_alter_validators_add_error_messages	2021-08-17 11:04:11.665113+00
+13	auth	0008_alter_user_username_max_length	2021-08-17 11:04:11.674859+00
+14	auth	0009_alter_user_last_name_max_length	2021-08-17 11:04:11.68326+00
+15	auth	0010_alter_group_name_max_length	2021-08-17 11:04:11.691528+00
+16	auth	0011_update_proxy_permissions	2021-08-17 11:04:11.697838+00
+17	auth	0012_alter_user_first_name_max_length	2021-08-17 11:04:11.704518+00
+18	authtoken	0001_initial	2021-08-17 11:04:11.717275+00
+19	authtoken	0002_auto_20160226_1747	2021-08-17 11:04:11.740004+00
+20	authtoken	0003_tokenproxy	2021-08-17 11:04:11.742674+00
+21	caseapi	0001_initial	2021-08-17 11:04:11.775929+00
+22	caseapi	0002_auto_20210719_2212	2021-08-17 11:04:11.788268+00
+23	caseapi	0003_alter_casemeta_docket_number	2021-08-17 11:04:11.792452+00
+24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-17 11:04:11.796693+00
+25	caseapi	0005_auto_20210810_0131	2021-08-17 11:04:11.830294+00
+26	sessions	0001_initial	2021-08-17 11:04:11.840074+00
 \.
 
 
@@ -2682,6 +2685,7 @@ COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 yligs6urr3cnyfverce4e09r0x4hpwsp	.eJxVjMsOgjAUBf-la9O00PaKS_d8A7mvWtRAQmFl_HclYaHbMzPnZQbc1jJsVZdhFHMx3px-N0J-6LQDueN0my3P07qMZHfFHrTafhZ9Xg_376BgLd865dClNkJqkVTQnZ0G4S5CDN55RHKcYuZGIzIrAeTQUBTnofEgGcz7A-X0OCY:1m5lJ4:V4w_fApTdsLfo12FR7bYFjZV3KvND8MooUuWP46P-60	2021-08-03 08:40:50.265311+00
 hsm1eo8nnrobwlivpruv28rl9wgaa8tq	.eJxVjMsOgjAUBf-la9O00PaKS_d8A7mvWtRAQmFl_HclYaHbMzPnZQbc1jJsVZdhFHMx3px-N0J-6LQDueN0my3P07qMZHfFHrTafhZ9Xg_376BgLd865dClNkJqkVTQnZ0G4S5CDN55RHKcYuZGIzIrAeTQUBTnofEgGcz7A-X0OCY:1m5lfR:HA4GOON_Z_ovdc9A-QN9VtrfqSKbsqFD8I7iReXKWVs	2021-08-03 09:03:57.481485+00
 tiyrlocds1do18i6izx1evng22slmbt9	.eJxVjDsOwjAQBe_iGln-rbEp6XMGa9fr4ABypDipEHeHSCmgfTPzXiLhtta09bKkicVFaHH63Qjzo7Qd8B3bbZZ5busykdwVedAuh5nL83q4fwcVe_3W3rvRB6MouGKjh6IQgIPKxrAmtMAU2aEOHBhQG1fI5HjOdrQKswXx_gDRkzfF:1m8Iwf:6_oewYT3IpNBMMBkOMb_bb2Q9pzw7na94GhUGEzrffw	2021-08-10 09:00:13.801854+00
+mtwv06n8s1jxxqi2h1gzdkkh7q1vz04z	.eJxVjEEOwiAUBe_C2hD6Sz_g0n3PQICHUjU0Ke3KeHdt0oVu38y8l_BhW4vfWl78BHEWnTj9bjGkR647wD3U2yzTXNdlinJX5EGbHGfk5-Vw_w5KaOVbK2ICD9kaYp2cQYZLUHAhsQ0M9CAV9bXPSBpWM1nHZogdMTQbJ94f5tw3wA:1mFwuJ:jnxB_aC7t2ne5G6PAVxyCaJXSUx0HDdKZHxbeA6Glp0	2021-08-31 11:05:23.370594+00
 \.
 
 
@@ -2741,7 +2745,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.auth_user_id_seq', 1, true);
+SELECT pg_catalog.setval('public.auth_user_id_seq', 2, true);
 
 
 --
@@ -2776,7 +2780,7 @@ SELECT pg_catalog.setval('public.cited_docs_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 1, false);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 2, true);
 
 
 --
