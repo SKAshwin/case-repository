@@ -1,4 +1,5 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
 from .serializers import CaseMetaSerializer, USCaseMetaSerializer
 from .models import CaseMeta, USCaseMeta
@@ -22,18 +23,28 @@ class CaseMetaFilter(filters.FilterSet):
 
         }
 
+
+# Define permission classes
 class ReadOnly(BasePermission):
     def has_permission(self, request, view):
         return request.method in SAFE_METHODS
 
+# Define a mixin to allow the ModelViewSet views to also create with an array of objects
+class CreateListModelMixin(object):
+    def get_serializer(self, *args, **kwargs):
+        """ if an array is passed, set serializer to many """
+        if isinstance(kwargs.get('data', {}), list):
+            kwargs['many'] = True
+        return super(CreateListModelMixin, self).get_serializer(*args, **kwargs)
+
 # The actual view sets
-class CaseMetaViewSet(viewsets.ModelViewSet):
+class CaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     permission_classes = [IsAdminUser|ReadOnly]
     queryset = CaseMeta.objects.all()
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
 
-class USCaseMetaViewSet(viewsets.ModelViewSet):
+class USCaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     permission_classes = [IsAdminUser|ReadOnly]
     queryset = USCaseMeta.objects.all()
     serializer_class = USCaseMetaSerializer
