@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
 from .serializers import CaseMetaSerializer, USCaseMetaSerializer
 from .models import CaseMeta, USCaseMeta
 from django.db import models
@@ -20,13 +21,20 @@ class CaseMetaFilter(filters.FilterSet):
             }
 
         }
+
+class ReadOnly(BasePermission):
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS
+
 # The actual view sets
-class CaseMetaViewSet(viewsets.ReadOnlyModelViewSet):
+class CaseMetaViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
     queryset = CaseMeta.objects.all()
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
 
-class USCaseMetaViewSet(viewsets.ReadOnlyModelViewSet):
+class USCaseMetaViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
     queryset = USCaseMeta.objects.all()
     serializer_class = USCaseMetaSerializer
     filterset_class = CaseMetaFilter
