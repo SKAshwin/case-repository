@@ -19,11 +19,26 @@ class Citation(models.Model):
 
 
 class Judges(models.Model):
+    GENDER_MALE = 0
+    GENDER_FEMALE = 1 
+    GENDER_CHOICES = [(GENDER_MALE, 'male'), (GENDER_FEMALE, 'female')]
+    
     judge_name = models.CharField(max_length=100)
-    judge_id = models.CharField(max_length=100)
+    judge_orig_name = models.CharField(max_length=100)
+    judge_gender  = models.IntegerField(choices = GENDER_CHOICES, null=True, blank=True)
     
     class Meta:
         db_table = 'judges'
+
+class USJudge(Judges):
+    DEMOCRAT = 0
+    REPUBLICAN = 1 
+    PARTY_CHOICES = [(DEMOCRAT, 'democrat'), (REPUBLICAN, 'republican')]
+    party = models.IntegerField(choices = PARTY_CHOICES, null=True, blank=True)
+    senior = models.BooleanField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'us_judges'
         
 class Tags(models.Model):
     tag = models.CharField(max_length=100)
