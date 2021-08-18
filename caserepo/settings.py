@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_extensions',
     'caseapi'
 ]
 
@@ -124,6 +125,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+
+# For django-extensions graph_models, which generates a png of the shcema
+# see: https://django-extensions.readthedocs.io/en/latest/graph_models.html 
+GRAPH_MODELS = {
+  'app_labels': 'caseapi',
+  'group_models': True,
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

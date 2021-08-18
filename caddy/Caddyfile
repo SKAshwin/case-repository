@@ -5,6 +5,7 @@
         path /static/*
     }
 }
-
+redir / /admin
+redir /schema /static/caseapi_model.png
 file_server /static/* browse
 reverse_proxy @notStatic web:8000
