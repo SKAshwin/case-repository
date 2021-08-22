@@ -21,7 +21,7 @@ class Citation(models.Model):
 class Judges(models.Model):
     GENDER_MALE = 0
     GENDER_FEMALE = 1 
-    GENDER_CHOICES = [(GENDER_MALE, 'male'), (GENDER_FEMALE, 'female')]
+    GENDER_CHOICES = [(GENDER_MALE, 'Male'), (GENDER_FEMALE, 'Female')]
     
     judge_name = models.CharField(max_length=100)
     judge_orig_name = models.CharField(max_length=100)
@@ -33,25 +33,35 @@ class Judges(models.Model):
 class USJudge(Judges):
     DEMOCRAT = 0
     REPUBLICAN = 1 
-    PARTY_CHOICES = [(DEMOCRAT, 'democrat'), (REPUBLICAN, 'republican')]
+    PARTY_CHOICES = [(DEMOCRAT, 'Democrat'), (REPUBLICAN, 'Republican')]
     party = models.IntegerField(choices = PARTY_CHOICES, null=True, blank=True)
     senior = models.BooleanField(null=True, blank=True)
 
     class Meta:
         db_table = 'us_judges'
-        
-class Tags(models.Model):
-    tag = models.CharField(max_length=100)
+
+class Tag(models.Model):
+    CRIMINAL = 'CRIMINAL'
+    FIRST_AMENDMENT = 'FIRST_AMENDMENT'
+    CIVIL_RIGHTS = 'CIVIL_RIGHTS'
+    DUE_PROCESS = 'DUE_PROCESS'
+    PRIVACY = 'PRIVACY'
+    LABOR_RELATIONS = 'LABOR_RELATIONS'
+    ECONOMIC_ACTIVITY = 'ECONOMIC_ACTIVITY'
+    REGULATION = 'REGULATION'
+    MISCELLANEOUS = 'MISCELLANEOUS'
+
+    TOPIC_CHOICES = [(CRIMINAL, 'Criminal'), (FIRST_AMENDMENT, 'First Amendment'), 
+                        (CIVIL_RIGHTS, 'Civil Rights'), (DUE_PROCESS, 'Due Process'),
+                        (PRIVACY, 'Privacy'), (LABOR_RELATIONS, 'Labor Relations'), 
+                        (ECONOMIC_ACTIVITY, 'Economic Activity'), (REGULATION, 'Regulation'),
+                        (MISCELLANEOUS, 'MISCELLANEOUS')]
+    
+    name = models.CharField(max_length=100, primary_key=True, choices = TOPIC_CHOICES)
     
     class Meta:
-        db_table = 'tags'
-    
-class FieldTags(models.Model):
-    field_tag = models.CharField(max_length=100)    
-    
-    class Meta:
-        db_table = 'field_tags'
-        
+        db_table = 'tag'
+
 class CaseMeta(models.Model):
     
     title = models.CharField(max_length=255, null=True, blank=True)
@@ -60,12 +70,14 @@ class CaseMeta(models.Model):
     doc_id = models.CharField(max_length=25)
     doc_type = models.CharField(max_length=50, null=True, blank=True)
     judges = models.ManyToManyField(Judges, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     case_id = models.CharField(max_length=25, primary_key = True, default = '00000', blank=True) 
     # the default value is just for migrations, never actually use
     outcome =  models.CharField(max_length=255, null=True, blank=True)
     docket_number = models.CharField(max_length = 255, null=True, blank=True)
     self_cite = models.CharField(max_length=75, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
+    
 
     class Meta:
         db_table = "case_meta"
