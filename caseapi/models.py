@@ -82,7 +82,24 @@ class CaseMeta(models.Model):
     class Meta:
         db_table = "case_meta"
 
+# CircuitName enum for use in USCircuitCaseMeta
+class CircuitName(models.IntegerChoices):
+    FED_CIRCUIT = 0, "Federal Circuit"
+    FIRST_CIRCUIT = 1, "1st Circuit"
+    SECOND_CIRCUIT = 2, "2nd Circuit"
+    THIRD_CIRCUIT = 3, "3rd Circuit"
+    FOURTH_CIRCUIT = 4, "4th Circuit"
+    FIFTH_CIRCUIT = 5, "5th Circuit"
+    SIXTH_CIRCUIT = 6, "6th Circuit"
+    SEVENTH_CIRCUIT = 7, "7th Circuit"
+    EIGHTH_CIRCUIT = 8, "8th Circuit"
+    NINTH_CIRCUIT = 9, "9th Circuit"
+    TENTH_CIRCUIT = 10, "10th Circuit"
+    ELEVENTH_CIRCUIT = 11, "11th Circuit"
+    DC_CIRCUIT = 12, "DC Circuit"
+
+
 class USCircuitCaseMeta(CaseMeta):
-    circuit_num = models.IntegerField(null=True)
+    circuit_name = models.IntegerField(null=True, blank = True, choices = CircuitName.choices)
     class Meta:
         db_table = "us_circuit_case_meta"
