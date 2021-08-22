@@ -4,6 +4,7 @@ services:
     web:
         build: .
         command: sh setup.prod.sh
+        container_name: django
         volumes:
             - static_volume:/app/static
         environment:
@@ -20,6 +21,7 @@ services:
     caddy:
         build: ./caddy
         command: caddy run
+        container_name: caddy
         volumes:
             - static_volume:/app/static
             - /data/caddy:/data
