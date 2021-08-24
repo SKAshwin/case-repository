@@ -44,6 +44,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 13	caseapi	uscircuitcasemeta
 14	caseapi	usjudge
 15	caseapi	tag
+18	caseapi	judgeruling
 \.
 
 
@@ -112,6 +113,10 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 58	Can change tag	15	change_tag
 59	Can delete tag	15	delete_tag
 60	Can view tag	15	view_tag
+73	Can add judge ruling	18	add_judgeruling
+74	Can change judge ruling	18	change_judgeruling
+75	Can delete judge ruling	18	delete_judgeruling
+76	Can view judge ruling	18	view_judgeruling
 \.
 
 
@@ -2603,22 +2608,6 @@ Tennessee Scrap Recyclers Assn. v. Bredesen, 556 F.3d 442 (6th Cir. 2009), Court
 
 
 --
--- Data for Name: judges; Type: TABLE DATA; Schema: public; Owner: caseapi_test
---
-
-COPY public.judges (id, judge_name, judge_orig_name, judge_gender) FROM stdin;
-\.
-
-
---
--- Data for Name: case_meta_judges; Type: TABLE DATA; Schema: public; Owner: caseapi_test
---
-
-COPY public.case_meta_judges (id, casemeta_id, judges_id) FROM stdin;
-\.
-
-
---
 -- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: caseapi_test
 --
 
@@ -2640,6 +2629,22 @@ MISCELLANEOUS
 --
 
 COPY public.case_meta_tags (id, casemeta_id, tag_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: judges; Type: TABLE DATA; Schema: public; Owner: caseapi_test
+--
+
+COPY public.judges (id, judge_name, judge_orig_name, judge_gender) FROM stdin;
+\.
+
+
+--
+-- Data for Name: caseapi_judgeruling; Type: TABLE DATA; Schema: public; Owner: caseapi_test
+--
+
+COPY public.caseapi_judgeruling (id, vote, author, case_id, judge_id) FROM stdin;
 \.
 
 
@@ -2674,37 +2679,38 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2021-08-22 17:25:15.740927+00
-2	auth	0001_initial	2021-08-22 17:25:15.794225+00
-3	admin	0001_initial	2021-08-22 17:25:15.810605+00
-4	admin	0002_logentry_remove_auto_add	2021-08-22 17:25:15.819901+00
-5	admin	0003_logentry_add_action_flag_choices	2021-08-22 17:25:15.827971+00
-6	contenttypes	0002_remove_content_type_name	2021-08-22 17:25:15.844495+00
-7	auth	0002_alter_permission_name_max_length	2021-08-22 17:25:15.852866+00
-8	auth	0003_alter_user_email_max_length	2021-08-22 17:25:15.859856+00
-9	auth	0004_alter_user_username_opts	2021-08-22 17:25:15.866459+00
-10	auth	0005_alter_user_last_login_null	2021-08-22 17:25:15.873318+00
-11	auth	0006_require_contenttypes_0002	2021-08-22 17:25:15.874905+00
-12	auth	0007_alter_validators_add_error_messages	2021-08-22 17:25:15.88265+00
-13	auth	0008_alter_user_username_max_length	2021-08-22 17:25:15.892187+00
-14	auth	0009_alter_user_last_name_max_length	2021-08-22 17:25:15.898924+00
-15	auth	0010_alter_group_name_max_length	2021-08-22 17:25:15.906405+00
-16	auth	0011_update_proxy_permissions	2021-08-22 17:25:15.912703+00
-17	auth	0012_alter_user_first_name_max_length	2021-08-22 17:25:15.91978+00
-18	authtoken	0001_initial	2021-08-22 17:25:15.93442+00
-19	authtoken	0002_auto_20160226_1747	2021-08-22 17:25:15.95757+00
-20	authtoken	0003_tokenproxy	2021-08-22 17:25:15.960309+00
-21	caseapi	0001_initial	2021-08-22 17:25:16.006497+00
-22	caseapi	0002_auto_20210719_2212	2021-08-22 17:25:16.028139+00
-23	caseapi	0003_alter_casemeta_docket_number	2021-08-22 17:25:16.033866+00
-24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-22 17:25:16.038918+00
-25	caseapi	0005_auto_20210810_0131	2021-08-22 17:25:16.067022+00
-26	caseapi	0006_auto_20210817_1444	2021-08-22 17:25:16.113283+00
-27	caseapi	0007_auto_20210818_1100	2021-08-22 17:25:16.128123+00
-28	caseapi	0008_auto_20210822_1537	2021-08-22 17:25:16.158302+00
-29	caseapi	0009_initial_data_tags	2021-08-22 17:25:16.177262+00
-30	sessions	0001_initial	2021-08-22 17:25:16.186535+00
-31	caseapi	0010_auto_20210822_1727	2021-08-22 17:27:26.855453+00
+1	contenttypes	0001_initial	2021-08-24 12:59:26.328412+00
+2	auth	0001_initial	2021-08-24 12:59:26.374923+00
+3	admin	0001_initial	2021-08-24 12:59:26.40436+00
+4	admin	0002_logentry_remove_auto_add	2021-08-24 12:59:26.434043+00
+5	admin	0003_logentry_add_action_flag_choices	2021-08-24 12:59:26.446277+00
+6	contenttypes	0002_remove_content_type_name	2021-08-24 12:59:26.46291+00
+7	auth	0002_alter_permission_name_max_length	2021-08-24 12:59:26.470909+00
+8	auth	0003_alter_user_email_max_length	2021-08-24 12:59:26.478623+00
+9	auth	0004_alter_user_username_opts	2021-08-24 12:59:26.485282+00
+10	auth	0005_alter_user_last_login_null	2021-08-24 12:59:26.492192+00
+11	auth	0006_require_contenttypes_0002	2021-08-24 12:59:26.493928+00
+12	auth	0007_alter_validators_add_error_messages	2021-08-24 12:59:26.501637+00
+13	auth	0008_alter_user_username_max_length	2021-08-24 12:59:26.510835+00
+14	auth	0009_alter_user_last_name_max_length	2021-08-24 12:59:26.517647+00
+15	auth	0010_alter_group_name_max_length	2021-08-24 12:59:26.525291+00
+16	auth	0011_update_proxy_permissions	2021-08-24 12:59:26.53151+00
+17	auth	0012_alter_user_first_name_max_length	2021-08-24 12:59:26.538122+00
+18	authtoken	0001_initial	2021-08-24 12:59:26.550023+00
+19	authtoken	0002_auto_20160226_1747	2021-08-24 12:59:26.572763+00
+20	authtoken	0003_tokenproxy	2021-08-24 12:59:26.575157+00
+21	caseapi	0001_initial	2021-08-24 12:59:26.603948+00
+22	caseapi	0002_auto_20210719_2212	2021-08-24 12:59:26.616176+00
+23	caseapi	0003_alter_casemeta_docket_number	2021-08-24 12:59:26.620324+00
+24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-24 12:59:26.624609+00
+25	caseapi	0005_auto_20210810_0131	2021-08-24 12:59:26.652009+00
+26	caseapi	0006_auto_20210817_1444	2021-08-24 12:59:26.697013+00
+27	caseapi	0007_auto_20210818_1100	2021-08-24 12:59:26.711473+00
+28	caseapi	0008_auto_20210822_1537	2021-08-24 12:59:26.737467+00
+29	caseapi	0009_initial_data_tags	2021-08-24 12:59:26.754009+00
+30	caseapi	0010_auto_20210822_1727	2021-08-24 12:59:26.763015+00
+31	sessions	0001_initial	2021-08-24 12:59:26.770826+00
+32	caseapi	0011_auto_20210824_1301	2021-08-24 13:05:46.031176+00
 \.
 
 
@@ -2754,7 +2760,7 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 72, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 76, true);
 
 
 --
@@ -2779,17 +2785,17 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 
 
 --
--- Name: case_meta_judges_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
---
-
-SELECT pg_catalog.setval('public.case_meta_judges_id_seq', 1, false);
-
-
---
 -- Name: case_meta_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
 SELECT pg_catalog.setval('public.case_meta_tags_id_seq', 1, false);
+
+
+--
+-- Name: caseapi_judgeruling_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
+--
+
+SELECT pg_catalog.setval('public.caseapi_judgeruling_id_seq', 1, false);
 
 
 --
@@ -2817,14 +2823,14 @@ SELECT pg_catalog.setval('public.django_admin_log_id_seq', 2, true);
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 17, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 18, true);
 
 
 --
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 31, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 32, true);
 
 
 --

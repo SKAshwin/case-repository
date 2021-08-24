@@ -69,7 +69,7 @@ class CaseMeta(models.Model):
     case_name = models.CharField(max_length=255, null=True, blank=True)
     doc_id = models.CharField(max_length=25)
     doc_type = models.CharField(max_length=50, null=True, blank=True)
-    judges = models.ManyToManyField(Judges, blank=True)
+    judges = models.ManyToManyField(Judges, blank=True, through='JudgeRuling')
     tags = models.ManyToManyField(Tag, blank=True)
     case_id = models.CharField(max_length=25, primary_key = True, default = '00000', blank=True) 
     # the default value is just for migrations, never actually use
@@ -103,3 +103,13 @@ class USCircuitCaseMeta(CaseMeta):
     circuit_name = models.IntegerField(null=True, blank = True, choices = CircuitName.choices)
     class Meta:
         db_table = "us_circuit_case_meta"
+
+class JudgeRuling(models.Model):
+    CONCUR = 1
+    DISSENT = 0
+    VOTE_CHOICES = [(CONCUR, 'Concurring'), (DISSENT, 'Dissenting')]
+    
+    judge = models.ForeignKey(Judges, on_delete=models.CASCADE)
+    case = models.ForeignKey(CaseMeta, on_delete=models.CASCADE)
+    vote = models.IntegerField(choices = VOTE_CHOICES, null = True, blank=True)
+    author = models.BooleanField(null=True, blank=True)
