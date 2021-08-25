@@ -41,23 +41,7 @@ class USJudge(Judges):
         db_table = 'us_judges'
 
 class Tag(models.Model):
-    CRIMINAL = 'CRIMINAL'
-    FIRST_AMENDMENT = 'FIRST_AMENDMENT'
-    CIVIL_RIGHTS = 'CIVIL_RIGHTS'
-    DUE_PROCESS = 'DUE_PROCESS'
-    PRIVACY = 'PRIVACY'
-    LABOR_RELATIONS = 'LABOR_RELATIONS'
-    ECONOMIC_ACTIVITY = 'ECONOMIC_ACTIVITY'
-    REGULATION = 'REGULATION'
-    MISCELLANEOUS = 'MISCELLANEOUS'
-
-    TOPIC_CHOICES = [(CRIMINAL, 'Criminal'), (FIRST_AMENDMENT, 'First Amendment'), 
-                        (CIVIL_RIGHTS, 'Civil Rights'), (DUE_PROCESS, 'Due Process'),
-                        (PRIVACY, 'Privacy'), (LABOR_RELATIONS, 'Labor Relations'), 
-                        (ECONOMIC_ACTIVITY, 'Economic Activity'), (REGULATION, 'Regulation'),
-                        (MISCELLANEOUS, 'MISCELLANEOUS')]
-    
-    name = models.CharField(max_length=100, primary_key=True, choices = TOPIC_CHOICES)
+    name = models.CharField(max_length=100, primary_key=True)
     
     class Meta:
         db_table = 'tag'

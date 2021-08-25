@@ -1,18 +1,13 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
-from .serializers import CaseMetaSerializer, USCircuitCaseMetaSerializer
-from .models import CaseMeta, USCircuitCaseMeta
+from .serializers import CaseMetaSerializer, USCircuitCaseMetaSerializer, JudgeSerializer, USJudgeSerializer, TagSerializer
+from .models import CaseMeta, USCircuitCaseMeta, Judges, USJudge, Tag
 from django.db import models
 from django_filters import rest_framework as filters
 
-# Define the filters first: see django-filter docs, at: https://www.django-rest-framework.org/api-guide/filtering/#searchfilter 
-class CaseMetaFilter(filters.FilterSet):
-    # allows filtering any queryset by the following fields
-    class Meta:
-        model = CaseMeta
-        fields = '__all__'
-        filter_overrides = {
+
+contains_override = {
             models.CharField: {
                 'filter_class': filters.CharFilter,
                 'extra': lambda f: {
@@ -22,6 +17,31 @@ class CaseMetaFilter(filters.FilterSet):
             }
 
         }
+
+# Define the filters first: see django-filter docs, at: https://www.django-rest-framework.org/api-guide/filtering/#searchfilter 
+class CaseMetaFilter(filters.FilterSet):
+    class Meta:
+        model = CaseMeta
+        fields = '__all__'
+        filter_overrides = contains_override
+
+class USCircuitCaseMetaFilter(filters.FilterSet):
+    class Meta:
+        model = USCircuitCaseMeta
+        fields = '__all__'
+        filter_overrides = contains_override
+
+class JudgeFilter(filters.FilterSet):
+    class Meta:
+        model = Judges
+        fields = '__all__'
+        filter_overrides = contains_override
+
+class USJudgeFilter(filters.FilterSet):
+    class Meta:
+        model = USJudge
+        fields = '__all__'
+        filter_overrides = contains_override
 
 
 # Define permission classes
@@ -49,5 +69,22 @@ class USCircuitCaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     permission_classes = [IsAdminUser|ReadOnly]
     queryset = USCircuitCaseMeta.objects.all()
     serializer_class = USCircuitCaseMetaSerializer
-    filterset_class = CaseMetaFilter
+    filterset_class = USCircuitCaseMetaFilter
 
+class JudgeViewSet(CreateListModelMixin, viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
+    queryset = Judges.objects.all()
+    serializer_class = JudgeSerializer
+    filterset_class = JudgeFilter
+
+class USJudgeViewSet(CreateListModelMixin, viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
+    queryset = USJudge.objects.all()
+    serializer_class = USJudgeSerializer
+    filterset_class = USJudgeFilter
+
+
+class TagViewSet(CreateListModelMixin, viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
