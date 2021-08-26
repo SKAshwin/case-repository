@@ -97,3 +97,8 @@ class JudgeRuling(models.Model):
     case = models.ForeignKey(CaseMeta, on_delete=models.CASCADE)
     vote = models.IntegerField(choices = VOTE_CHOICES, null = True, blank=True)
     author = models.BooleanField(null=True, blank=True)
+
+    class Meta:
+        unique_together = [['judge', 'case']]
+        # a judge can't be on a single case twice
+        # similarly, a case cannot have two identical judges on it
