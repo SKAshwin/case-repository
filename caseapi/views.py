@@ -1,8 +1,8 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
-from .serializers import CaseMetaSerializer, USCircuitCaseMetaSerializer, JudgeSerializer, USJudgeSerializer, TagSerializer
-from .models import CaseMeta, USCircuitCaseMeta, Judges, USJudge, Tag
+from .serializers import CaseMetaSerializer, JudgeRulingSerializer, USCircuitCaseMetaSerializer, JudgeSerializer, USJudgeSerializer, TagSerializer
+from .models import CaseMeta, JudgeRuling, USCircuitCaseMeta, Judges, USJudge, Tag
 from django.db import models
 from django_filters import rest_framework as filters
 
@@ -40,6 +40,12 @@ class JudgeFilter(filters.FilterSet):
 class USJudgeFilter(filters.FilterSet):
     class Meta:
         model = USJudge
+        fields = '__all__'
+        filter_overrides = contains_override
+
+class JudgeRulingFilter(filters.FilterSet):
+    class Meta:
+        model = JudgeRuling
         fields = '__all__'
         filter_overrides = contains_override
 
@@ -83,6 +89,11 @@ class USJudgeViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     serializer_class = USJudgeSerializer
     filterset_class = USJudgeFilter
 
+class JudgeRulingViewSet(CreateListModelMixin, viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser|ReadOnly]
+    queryset = JudgeRuling.objects.all()
+    serializer_class = JudgeRulingSerializer
+    filterset_class = JudgeRulingFilter
 
 class TagViewSet(CreateListModelMixin, viewsets.ModelViewSet):
     permission_classes = [IsAdminUser|ReadOnly]
