@@ -127,7 +127,7 @@ REST_FRAMEWORK = {
 }
 
 
-# Disable checks on uploading - uploading can only be done by admins anyway
+# Disable checks on uploading - uploading can only be done by admins anyway0
 DATA_UPLOAD_MAX_NUMBER_FIELDS = None
 DATA_UPLOAD_MAX_MEMORY_SIZE = None
 
