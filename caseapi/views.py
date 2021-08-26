@@ -1,6 +1,6 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
+from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS, IsAuthenticated
 from .serializers import CaseMetaSerializer, JudgeRulingSerializer, USCircuitCaseMetaSerializer, JudgeSerializer, USJudgeSerializer, TagSerializer
 from .models import CaseMeta, JudgeRuling, USCircuitCaseMeta, Judges, USJudge, Tag
 from django.db import models
@@ -55,6 +55,8 @@ class ReadOnly(BasePermission):
     def has_permission(self, request, view):
         return request.method in SAFE_METHODS
 
+AdminEditableAuthenticatedReadable = [IsAdminUser|(ReadOnly & IsAuthenticated)] # non-admins can only read, can't update or post new objects
+
 # Define a mixin to allow the ModelViewSet views to also create with an array of objects
 class CreateListModelMixin(object):
     def get_serializer(self, *args, **kwargs):
@@ -65,37 +67,37 @@ class CreateListModelMixin(object):
 
 # The actual view sets
 class CaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly] # non-admins can only read, can't update or post new objects
+    permission_classes = AdminEditableAuthenticatedReadable
     # note that, in settings.py, only authenticated users can acces the API at all)
     queryset = CaseMeta.objects.all()
     serializer_class = CaseMetaSerializer
     filterset_class = CaseMetaFilter
 
 class USCircuitCaseMetaViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = AdminEditableAuthenticatedReadable
     queryset = USCircuitCaseMeta.objects.all()
     serializer_class = USCircuitCaseMetaSerializer
     filterset_class = USCircuitCaseMetaFilter
 
 class JudgeViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = AdminEditableAuthenticatedReadable
     queryset = Judges.objects.all()
     serializer_class = JudgeSerializer
     filterset_class = JudgeFilter
 
 class USJudgeViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = AdminEditableAuthenticatedReadable
     queryset = USJudge.objects.all()
     serializer_class = USJudgeSerializer
     filterset_class = USJudgeFilter
 
 class JudgeRulingViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = AdminEditableAuthenticatedReadable
     queryset = JudgeRuling.objects.all()
     serializer_class = JudgeRulingSerializer
     filterset_class = JudgeRulingFilter
 
 class TagViewSet(CreateListModelMixin, viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser|ReadOnly]
+    permission_classes = AdminEditableAuthenticatedReadable
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
