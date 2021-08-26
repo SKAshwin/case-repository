@@ -126,6 +126,11 @@ REST_FRAMEWORK = {
     ],
 }
 
+
+# Disable checks on uploading - uploading can only be done by admins anyway
+DATA_UPLOAD_MAX_NUMBER_FIELDS = None
+DATA_UPLOAD_MAX_MEMORY_SIZE = None
+
 # For django-extensions graph_models, which generates a png of the shcema
 # see: https://django-extensions.readthedocs.io/en/latest/graph_models.html 
 GRAPH_MODELS = {
