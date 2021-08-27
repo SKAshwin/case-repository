@@ -51,7 +51,7 @@ class CaseMeta(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     doc_title = models.CharField(max_length=255, null=True, blank=True)
     case_name = models.CharField(max_length=255, null=True, blank=True)
-    doc_id = models.CharField(max_length=25)
+    doc_id = models.CharField(max_length=25, null=True, blank=True)
     doc_type = models.CharField(max_length=50, null=True, blank=True)
     judges = models.ManyToManyField(Judges, blank=True, through='JudgeRuling')
     tags = models.ManyToManyField(Tag, blank=True)
