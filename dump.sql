@@ -2679,38 +2679,40 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2021-08-25 18:56:13.603089+00
-2	auth	0001_initial	2021-08-25 18:56:13.650168+00
-3	admin	0001_initial	2021-08-25 18:56:13.6648+00
-4	admin	0002_logentry_remove_auto_add	2021-08-25 18:56:13.672235+00
-5	admin	0003_logentry_add_action_flag_choices	2021-08-25 18:56:13.678939+00
-6	contenttypes	0002_remove_content_type_name	2021-08-25 18:56:13.692553+00
-7	auth	0002_alter_permission_name_max_length	2021-08-25 18:56:13.699467+00
-8	auth	0003_alter_user_email_max_length	2021-08-25 18:56:13.706472+00
-9	auth	0004_alter_user_username_opts	2021-08-25 18:56:13.713175+00
-10	auth	0005_alter_user_last_login_null	2021-08-25 18:56:13.720321+00
-11	auth	0006_require_contenttypes_0002	2021-08-25 18:56:13.721917+00
-12	auth	0007_alter_validators_add_error_messages	2021-08-25 18:56:13.729795+00
-13	auth	0008_alter_user_username_max_length	2021-08-25 18:56:13.739396+00
-14	auth	0009_alter_user_last_name_max_length	2021-08-25 18:56:13.746325+00
-15	auth	0010_alter_group_name_max_length	2021-08-25 18:56:13.753897+00
-16	auth	0011_update_proxy_permissions	2021-08-25 18:56:13.760374+00
-17	auth	0012_alter_user_first_name_max_length	2021-08-25 18:56:13.767258+00
-18	authtoken	0001_initial	2021-08-25 18:56:13.77907+00
-19	authtoken	0002_auto_20160226_1747	2021-08-25 18:56:13.802857+00
-20	authtoken	0003_tokenproxy	2021-08-25 18:56:13.805357+00
-21	caseapi	0001_initial	2021-08-25 18:56:13.839494+00
-22	caseapi	0002_auto_20210719_2212	2021-08-25 18:56:13.853682+00
-23	caseapi	0003_alter_casemeta_docket_number	2021-08-25 18:56:13.85862+00
-24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-25 18:56:13.86363+00
-25	caseapi	0005_auto_20210810_0131	2021-08-25 18:56:13.896578+00
-26	caseapi	0006_auto_20210817_1444	2021-08-25 18:56:13.94723+00
-27	caseapi	0007_auto_20210818_1100	2021-08-25 18:56:13.961644+00
-28	caseapi	0008_auto_20210822_1537	2021-08-25 18:56:13.994915+00
-29	caseapi	0009_initial_data_tags	2021-08-25 18:56:14.032266+00
-30	caseapi	0010_auto_20210822_1727	2021-08-25 18:56:14.042328+00
-31	caseapi	0011_auto_20210824_1301	2021-08-25 18:56:14.067537+00
-32	sessions	0001_initial	2021-08-25 18:56:14.075554+00
+1	contenttypes	0001_initial	2021-08-27 16:32:21.339686+00
+2	auth	0001_initial	2021-08-27 16:32:21.413042+00
+3	admin	0001_initial	2021-08-27 16:32:21.438691+00
+4	admin	0002_logentry_remove_auto_add	2021-08-27 16:32:21.453084+00
+5	admin	0003_logentry_add_action_flag_choices	2021-08-27 16:32:21.464479+00
+6	contenttypes	0002_remove_content_type_name	2021-08-27 16:32:21.480721+00
+7	auth	0002_alter_permission_name_max_length	2021-08-27 16:32:21.488646+00
+8	auth	0003_alter_user_email_max_length	2021-08-27 16:32:21.496522+00
+9	auth	0004_alter_user_username_opts	2021-08-27 16:32:21.50323+00
+10	auth	0005_alter_user_last_login_null	2021-08-27 16:32:21.511255+00
+11	auth	0006_require_contenttypes_0002	2021-08-27 16:32:21.512906+00
+12	auth	0007_alter_validators_add_error_messages	2021-08-27 16:32:21.519352+00
+13	auth	0008_alter_user_username_max_length	2021-08-27 16:32:21.527454+00
+14	auth	0009_alter_user_last_name_max_length	2021-08-27 16:32:21.534127+00
+15	auth	0010_alter_group_name_max_length	2021-08-27 16:32:21.541404+00
+16	auth	0011_update_proxy_permissions	2021-08-27 16:32:21.547589+00
+17	auth	0012_alter_user_first_name_max_length	2021-08-27 16:32:21.554129+00
+18	authtoken	0001_initial	2021-08-27 16:32:21.567308+00
+19	authtoken	0002_auto_20160226_1747	2021-08-27 16:32:21.590155+00
+20	authtoken	0003_tokenproxy	2021-08-27 16:32:21.592542+00
+21	caseapi	0001_initial	2021-08-27 16:32:21.621653+00
+22	caseapi	0002_auto_20210719_2212	2021-08-27 16:32:21.633701+00
+23	caseapi	0003_alter_casemeta_docket_number	2021-08-27 16:32:21.637984+00
+24	caseapi	0004_rename_document_title_casemeta_doc_title	2021-08-27 16:32:21.642249+00
+25	caseapi	0005_auto_20210810_0131	2021-08-27 16:32:21.670904+00
+26	caseapi	0006_auto_20210817_1444	2021-08-27 16:32:21.715311+00
+27	caseapi	0007_auto_20210818_1100	2021-08-27 16:32:21.730115+00
+28	caseapi	0008_auto_20210822_1537	2021-08-27 16:32:21.756851+00
+29	caseapi	0009_initial_data_tags	2021-08-27 16:32:21.773922+00
+30	caseapi	0010_auto_20210822_1727	2021-08-27 16:32:21.784543+00
+31	caseapi	0011_auto_20210824_1301	2021-08-27 16:32:21.806799+00
+32	caseapi	0012_initial_data_tags	2021-08-27 16:32:21.832565+00
+33	sessions	0001_initial	2021-08-27 16:32:21.864284+00
+34	caseapi	0013_auto_20210827_1634	2021-08-27 16:37:03.900667+00
 \.
 
 
@@ -2830,7 +2832,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 18, true);
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: caseapi_test
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 32, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 34, true);
 
 
 --
