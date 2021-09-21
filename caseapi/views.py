@@ -1,3 +1,4 @@
+from django_filters.filters import NumberFilter
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS, IsAuthenticated
@@ -14,9 +15,27 @@ contains_override = {
                     'lookup_expr': 'icontains', # ?title=hello picks up any case with hello *contained* in the title
                     # true for all char fields
                 }
-            }
-
+            },
         }
+
+# The default ChoiceFilter only lets you search by the underlying representation of a choice
+# for example, if gender is either 0 or 1 (mapping to 'Male' or 'Female' in its external representation)
+# you have to use ?gender=0, NOT ?gender=Male
+# this custom filter, extending the ChoiceFilter, is meant to fix that
+# Drawing on an idea from here: https://sam.hooke.me/note/2019/07/migrating-from-tastypie-to-django-rest-framework/ 
+class NamedChoiceFilter(filters.ChoiceFilter):
+    def __init__(self, choices, *args, **kwargs):
+        self.reversed_choices  = tuple((v, k) for (k, v) in choices)
+        # reverse the choices of the supplied tuple, to make it an array of strings to integer 
+        # this way, the ChoiceFilter superclass considers the *strings* the valid choices, not the integers
+        super().__init__(*args, choices = self.reversed_choices, **kwargs)
+    
+    def filter(self, qs, value):
+        if value != "":
+            value = dict(self.reversed_choices)[value] # this step converts the string 'Male' (for eg) back to 0
+        
+        # the integer is used internally to filter the queryset
+        return super().filter(qs, value)
 
 # Define the filters first: see django-filter docs, at: https://www.django-rest-framework.org/api-guide/filtering/#searchfilter 
 class CaseMetaFilter(filters.FilterSet):
@@ -32,12 +51,15 @@ class USCircuitCaseMetaFilter(filters.FilterSet):
         filter_overrides = contains_override
 
 class JudgeFilter(filters.FilterSet):
+    judge_gender = NamedChoiceFilter(choices=Judges.GENDER_CHOICES)
     class Meta:
         model = Judges
         fields = '__all__'
         filter_overrides = contains_override
 
 class USJudgeFilter(filters.FilterSet):
+    judge_gender = NamedChoiceFilter(choices=USJudge.GENDER_CHOICES)
+    party = NamedChoiceFilter(choices=USJudge.PARTY_CHOICES)
     class Meta:
         model = USJudge
         fields = '__all__'
