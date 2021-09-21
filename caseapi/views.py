@@ -4,7 +4,7 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS, IsAuthenticated
 from .serializers import CaseMetaSerializer, JudgeRulingSerializer, USCircuitCaseMetaSerializer, JudgeSerializer, USJudgeSerializer, TagSerializer
-from .models import CaseMeta, JudgeRuling, USCircuitCaseMeta, Judges, USJudge, Tag
+from .models import CaseMeta, CircuitName, JudgeRuling, USCircuitCaseMeta, Judges, USJudge, Tag
 from django.db import models
 from django_filters import rest_framework as filters
 
@@ -46,6 +46,7 @@ class CaseMetaFilter(filters.FilterSet):
         filter_overrides = contains_override
 
 class USCircuitCaseMetaFilter(filters.FilterSet):
+    circuit_name = NamedChoiceFilter(choices=CircuitName.choices)
     class Meta:
         model = USCircuitCaseMeta
         fields = '__all__'
@@ -71,6 +72,8 @@ class USJudgeFilter(filters.FilterSet):
         filter_overrides = contains_override
 
 class JudgeRulingFilter(filters.FilterSet):
+    id = filters.NumberFilter()
+    vote = NamedChoiceFilter(choices=JudgeRuling.VOTE_CHOICES)
     class Meta:
         model = JudgeRuling
         fields = '__all__'
