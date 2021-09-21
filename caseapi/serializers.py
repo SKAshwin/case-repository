@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.relations import PrimaryKeyRelatedField
-from .models import CaseMeta, USCircuitCaseMeta, Tag, Judges, USJudge, JudgeRuling
+from .models import CaseMeta, CircuitName, USCircuitCaseMeta, Tag, Judges, USJudge, JudgeRuling
 
 
 # To allow choices to render with their labels, instead of their underlying representation
@@ -28,6 +28,7 @@ class CaseMetaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class USCircuitCaseMetaSerializer(serializers.ModelSerializer):
+    circuit_name = ChoiceField(choices=CircuitName.choices)
     class Meta:
         model = USCircuitCaseMeta
         fields = '__all__'
