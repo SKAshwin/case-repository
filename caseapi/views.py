@@ -1,3 +1,4 @@
+from django.db.models.fields import BigAutoField
 from django_filters.filters import NumberFilter
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -51,6 +52,9 @@ class USCircuitCaseMetaFilter(filters.FilterSet):
         filter_overrides = contains_override
 
 class JudgeFilter(filters.FilterSet):
+    id = filters.NumberFilter() 
+    # id needs explicit NumberFilter assignment, as BigAutoField not automatically assigned NumberFilter
+    # by django-filter; IntegerFields are automatically assigned NumberFilter
     judge_gender = NamedChoiceFilter(choices=Judges.GENDER_CHOICES)
     class Meta:
         model = Judges
@@ -58,6 +62,7 @@ class JudgeFilter(filters.FilterSet):
         filter_overrides = contains_override
 
 class USJudgeFilter(filters.FilterSet):
+    id = filters.NumberFilter()
     judge_gender = NamedChoiceFilter(choices=USJudge.GENDER_CHOICES)
     party = NamedChoiceFilter(choices=USJudge.PARTY_CHOICES)
     class Meta:
