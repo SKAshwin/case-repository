@@ -23,7 +23,7 @@ class Judges(models.Model):
     GENDER_FEMALE = 1 
     GENDER_CHOICES = [(GENDER_MALE, 'Male'), (GENDER_FEMALE, 'Female')]
     
-    judge_name = models.CharField(max_length=100)
+    judge_name = models.CharField(max_length=100, null=True, blank=True)
     judge_orig_name = models.CharField(max_length=100)
     judge_gender  = models.IntegerField(choices = GENDER_CHOICES, null=True, blank=True)
     
