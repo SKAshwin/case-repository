@@ -28,7 +28,7 @@ class CaseMetaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class USCircuitCaseMetaSerializer(serializers.ModelSerializer):
-    circuit_name = ChoiceField(choices=CircuitName.choices, allow_null = True)
+    circuit_name = ChoiceField(choices=CircuitName.choices, allow_null = True, required = False)
     class Meta:
         model = USCircuitCaseMeta
         fields = '__all__'
@@ -56,14 +56,14 @@ class TagSerializer(serializers.ModelSerializer):
 
 class JudgeSerializer(serializers.ModelSerializer):
     # For these fields, use the labels on the choice in models.py
-    judge_gender = ChoiceField(choices=Judges.GENDER_CHOICES, allow_null = True)
+    judge_gender = ChoiceField(choices=Judges.GENDER_CHOICES, allow_null = True, required = False)
     class Meta:
         model = Judges
         fields = '__all__'
 
 class USJudgeSerializer(serializers.ModelSerializer):
-    party = ChoiceField(choices=USJudge.PARTY_CHOICES, allow_null = True)
-    judge_gender = ChoiceField(choices=Judges.GENDER_CHOICES, allow_null = True)
+    party = ChoiceField(choices=USJudge.PARTY_CHOICES, allow_null = True, required = False)
+    judge_gender = ChoiceField(choices=Judges.GENDER_CHOICES, allow_null = True, required = False)
     class Meta:
         model = USJudge
         fields = '__all__'
@@ -71,7 +71,7 @@ class USJudgeSerializer(serializers.ModelSerializer):
 class JudgeRulingSerializer(serializers.ModelSerializer):
     judge = serializers.PrimaryKeyRelatedField(queryset = Judges.objects.all())
     case = serializers.PrimaryKeyRelatedField(queryset = CaseMeta.objects.all())
-    vote = ChoiceField(choices=JudgeRuling.VOTE_CHOICES, allow_null = True)
+    vote = ChoiceField(choices=JudgeRuling.VOTE_CHOICES, allow_null = True, required = False)
     class Meta:
         model = JudgeRuling
         fields = '__all__'
