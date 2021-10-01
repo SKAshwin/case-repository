@@ -91,7 +91,8 @@ class USCircuitCaseMeta(CaseMeta):
 class JudgeRuling(models.Model):
     CONCUR = 1
     DISSENT = 0
-    VOTE_CHOICES = [(CONCUR, 'Concurring'), (DISSENT, 'Dissenting')]
+    PARTIAL = 2
+    VOTE_CHOICES = [(DISSENT, 'Dissenting'), (CONCUR, 'Concurring'), (PARTIAL, 'Partial')]
     
     judge = models.ForeignKey(Judges, on_delete=models.CASCADE)
     case = models.ForeignKey(CaseMeta, on_delete=models.CASCADE)
