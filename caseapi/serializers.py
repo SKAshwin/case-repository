@@ -25,13 +25,13 @@ class ChoiceField(serializers.ChoiceField):
 class CaseMetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = CaseMeta
-        fields = '__all__'
+        exclude = ['judges']
 
 class USCircuitCaseMetaSerializer(serializers.ModelSerializer):
     circuit_name = ChoiceField(choices=CircuitName.choices, allow_null = True, required = False)
     class Meta:
         model = USCircuitCaseMeta
-        fields = '__all__'
+        exclude = ['judges']
 
 # Tags should be serialized into a string -
 # ie, the tag "CRIMINAL" should be serialized into "CRIMINAL" not
