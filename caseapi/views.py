@@ -1,5 +1,3 @@
-from django.db.models.fields import BigAutoField
-from django_filters.filters import NumberFilter
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS, IsAuthenticated
@@ -9,6 +7,11 @@ from django.db import models
 from django_filters import rest_framework as filters
 
 
+# First, the filters. See: https://django-filter.readthedocs.io/en/stable/ref/filters.html
+# For how filters work
+
+
+# General override for all character filters, applied by default to models.CharField by django-filter
 contains_override = {
             models.CharField: {
                 'filter_class': filters.CharFilter,
@@ -40,6 +43,7 @@ class NamedChoiceFilter(filters.ChoiceFilter):
 
 # Define the filters first: see django-filter docs, at: https://www.django-rest-framework.org/api-guide/filtering/#searchfilter 
 class CaseMetaFilter(filters.FilterSet):
+    date = filters.DateFromToRangeFilter()
     class Meta:
         model = CaseMeta
         fields = '__all__'
@@ -47,6 +51,7 @@ class CaseMetaFilter(filters.FilterSet):
 
 class USCircuitCaseMetaFilter(filters.FilterSet):
     circuit_name = NamedChoiceFilter(choices=CircuitName.choices)
+    date = filters.DateFromToRangeFilter()
     class Meta:
         model = USCircuitCaseMeta
         fields = '__all__'
