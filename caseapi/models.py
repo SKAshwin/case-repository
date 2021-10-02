@@ -24,7 +24,7 @@ class Judges(models.Model):
     GENDER_CHOICES = [(GENDER_MALE, 'Male'), (GENDER_FEMALE, 'Female')]
     
     judge_name = models.CharField(max_length=100, null=True, blank=True)
-    judge_orig_name = models.CharField(max_length=100)
+    judge_orig_name = models.CharField(max_length=100, null=True, blank=True)
     judge_gender  = models.IntegerField(choices = GENDER_CHOICES, null=True, blank=True)
     
     class Meta:
