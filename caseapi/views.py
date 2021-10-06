@@ -44,6 +44,8 @@ class NamedChoiceFilter(filters.ChoiceFilter):
 # Define the filters first: see django-filter docs, at: https://www.django-rest-framework.org/api-guide/filtering/#searchfilter 
 class CaseMetaFilter(filters.FilterSet):
     date = filters.DateFromToRangeFilter()
+    judge_id = filters.NumberFilter(field_name="judges__id") # example of searching by foreign key field
+    judge_name = filters.CharFilter(field_name="judges__judge_name", lookup_expr='icontains')
     class Meta:
         model = CaseMeta
         fields = '__all__'
@@ -52,6 +54,8 @@ class CaseMetaFilter(filters.FilterSet):
 class USCircuitCaseMetaFilter(filters.FilterSet):
     circuit_name = NamedChoiceFilter(choices=CircuitName.choices)
     date = filters.DateFromToRangeFilter()
+    judge_id = filters.NumberFilter(field_name="judges__id") # example of searching by foreign key field
+    judge_name = filters.CharFilter(field_name="judges__judge_name", lookup_expr='icontains')
     class Meta:
         model = USCircuitCaseMeta
         fields = '__all__'
